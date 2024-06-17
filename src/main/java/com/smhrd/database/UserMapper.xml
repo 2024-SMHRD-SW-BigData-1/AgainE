@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<!--  회원 테이블에 사용할 Mapper  -->
+
+
+
+<mapper namespace="UserMapper">
+	
+	<!-- sql문 작성  -->
+	
+	<!-- <insert id="insertUser" parameterType="User">
+		insert into tb_user 
+		values (#{user_id}, #{user_pw}, #{user_name}, #{user_email}, #{user_phone}, #{user_addr},
+		#{user_room_tone},#{user_room_color}, #{joined_at}, #{user_type} ,#{user_room_url})
+	</insert> -->
+	
+	
+	
+	
+</mapper>

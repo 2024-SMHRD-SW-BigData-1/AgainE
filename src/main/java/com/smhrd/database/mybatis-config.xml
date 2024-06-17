@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- db연결 해주는 파일명 경로(패키지 명부터 작성. 파일 경로처럼 / ) 
+	이곳에서는 db와 연결해주는 기능만을 담당
+-->
+<properties resource="com/smhrd/database/db.properties"></properties>
+  
+  <!-- typeAliases : 패키지 경로를 축약해주는 역할  -->
+  <typeAliases>
+  	<typeAlias type="com.smhrd.model.Basket" alias="Basket"/>
+  	<typeAlias type="com.smhrd.model.Board" alias="Board"/>
+  	<typeAlias type="com.smhrd.model.Item" alias="Item"/>
+  	<typeAlias type="com.smhrd.model.Order" alias="Order"/>
+  	<typeAlias type="com.smhrd.model.OrderDetail" alias="OrderDetail"/>
+  	<typeAlias type="com.smhrd.model.Reply" alias="Reply"/>
+  	<typeAlias type="com.smhrd.model.User" alias="User"/>
+  </typeAliases>
+  
+  
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+  <!-- 내가 사용할 mapper 작성 해주기 mapper의 경로 작성-->
+    <mapper resource="com/smhrd/database/BasketMapper.xml"/>
+    <mapper resource="com/smhrd/database/BoardMapper.xml"/>
+    <mapper resource="com/smhrd/database/ItemMapper.xml"/>
+    <mapper resource="com/smhrd/database/OrderDetailMapper.xml"/>
+    <mapper resource="com/smhrd/database/OrderMapper.xml"/>
+    <mapper resource="com/smhrd/database/ReplyMapper.xml"/>
+    <mapper resource="com/smhrd/database/UserMapper.xml"/>
+  </mappers>
+</configuration>
