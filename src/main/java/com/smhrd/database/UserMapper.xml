@@ -11,13 +11,23 @@
 	
 	<!-- sql문 작성  -->
 	
-	<!-- <insert id="insertUser" parameterType="User">
+	
+	<!-- id 중복체크  -->
+	<select id="checkUserid" parameterType="String" resultType="Integer">
+		select count(*) from tb_user where user_id = #{user_id}
+	</select>
+	
+	
+	<!-- 회원가입  -->
+	<insert id="joinUser" parameterType="User">
 		insert into tb_user 
-		values (#{user_id}, #{user_pw}, #{user_name}, #{user_email}, #{user_phone}, #{user_addr},
-		#{user_room_tone},#{user_room_color}, #{joined_at}, #{user_type} ,#{user_room_url})
-	</insert> -->
+		values (#{user_id}, SHA(#{user_pw}), #{user_name}, #{user_email}, #{user_phone}, #{user_addr},
+		null, null, #{joined_at}, #{user_type} ,null)
+	</insert>
 	
-	
-	
+	<!-- 로그인 -->
+	<select id="loginUser" parameterType="User" resultType="User">
+		select * from tb_user where user_id=#{user_id} and user_pw=SHA(#{user_pw})
+	</select>
 	
 </mapper>

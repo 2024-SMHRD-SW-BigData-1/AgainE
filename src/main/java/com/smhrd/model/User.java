@@ -41,17 +41,16 @@ public class User {
     private String user_type;
 
     
+    
+    // 회원 가입 시에 필요한 정보만 담은 생성자
 	public User(String user_id, String user_pw, String user_name, String user_email, String user_phone,
-			String user_addr, String user_room_tone, String user_room_color, LocalDateTime joined_at, String user_type , String user_room_url) {
+			String user_addr, LocalDateTime joined_at, String user_type) {
 		this.user_id = user_id;
 		this.user_pw = user_pw;
 		this.user_name = user_name;
 		this.user_email = user_email;
 		this.user_phone = user_phone;
 		this.user_addr = user_addr;
-		this.user_room_tone = user_room_tone;
-		this.user_room_color = user_room_color;
-		this.user_room_url = user_room_url;
 		this.joined_at = joined_at;
 		this.user_type = user_type;
 	}

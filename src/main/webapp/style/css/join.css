@@ -1,0 +1,99 @@
+body {
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.group {
+  position: relative;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  border-radius: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.form-group button {
+  font-weight: 500px;
+  font-size: 20px;
+  margin-top: 35px;
+  width: 100%;
+  padding: 10px;
+  background-color: #aca9a9;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-group button:hover {
+  background-color: #4b4c4d;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #000000;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.log_size {
+  margin-right: 500px;
+  text-align: center;
+  font-weight: 500px;
+}
+
+
+
+.group button {
+  background-color: rgba(255, 255, 255, 0);
+  position: absolute;
+
+  bottom: 16px;
+  right: 5px;
+  border-radius: 15px;
+  color: black;
+  width: 100px;
+  height: 0.5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.group button:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.container h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 30px;
+  /* 필요한 만큼의 패딩 추가 */
+
+}
