@@ -90,6 +90,9 @@
 			</h2>
 			</div>
 			
+			<!-- ------------------------------------------------------------------------------   -->
+			<!--                               카테고리 시작                                         -->
+			<!-- ------------------------------------------------------------------------------   -->
 			
 			<% if(user != null){ %>  <!-- 로그인 했을 시  -->
 				 	<%if(user.getUser_type().equals("f") ||  user.getUser_type().equals("t")){ %> <!-- 사용자일때 -->
@@ -165,6 +168,10 @@
 				</h4>
 			</div>
 				<%} %>
+				
+			<!-- ------------------------------------------------------------------------------   -->
+			<!--                               색상선택 시작                                         -->
+			<!-- ------------------------------------------------------------------------------   -->
 
 				<% if(user != null){ %>  <!-- 로그인 했을 시  -->
 				 	<%if(user.getUser_type().equals("f") ||  user.getUser_type().equals("t")){ %> <!-- 사용자일때 -->
@@ -235,6 +242,11 @@
 			<%}} %>
 
 
+			<!-- ------------------------------------------------------------------------------   -->
+			<!--                               상품 보여주기 시작                                     -->
+			<!-- ------------------------------------------------------------------------------   -->
+
+
 
 		<% if(user != null){ %>  <!-- 로그인 했을 시  -->
 				 	<%if(user.getUser_type().equals("f") ||  user.getUser_type().equals("t")){ %> <!-- 사용자일때 -->
@@ -245,7 +257,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/1.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -259,7 +271,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/100.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -273,7 +285,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/600.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -287,7 +299,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/500.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -301,7 +313,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/300.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -315,7 +327,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/200.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -341,7 +353,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/1.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -355,7 +367,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/100.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -369,7 +381,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/600.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -383,7 +395,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/500.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -397,7 +409,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/300.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
@@ -411,7 +423,7 @@
 				<a onclick="showPopup()">
 
 
-					<img src="../images/hero.jpg" class="img-responsive" alt="Product Thumbnail">
+					<img src="../item_image/200.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>

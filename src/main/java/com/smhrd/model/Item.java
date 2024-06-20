@@ -22,8 +22,6 @@ public class Item {
     // 아이템 카테고리 
     private String item_category;
 
-    // 아이템 평점 
-    private Double item_ratings;
 
     // 아이템 가격 
     private Integer item_price;
@@ -32,14 +30,13 @@ public class Item {
     private String item_url;
 
 	public Item(String item_name, String item_tone, String item_color, String item_info,
-			String item_category, Double item_ratings, Integer item_price, String item_url) {
+			String item_category, Integer item_price, String item_url) {
 		
 		this.item_name = item_name;
 		this.item_tone = item_tone;
 		this.item_color = item_color;
 		this.item_info = item_info;
 		this.item_category = item_category;
-		this.item_ratings = item_ratings;
 		this.item_price = item_price;
 		this.item_url = item_url;
 	}
@@ -96,13 +93,7 @@ public class Item {
 		this.item_category = item_category;
 	}
 
-	public Double getItem_ratings() {
-		return item_ratings;
-	}
-
-	public void setItem_ratings(Double item_ratings) {
-		this.item_ratings = item_ratings;
-	}
+	
 
 	public Integer getItem_price() {
 		return item_price;
