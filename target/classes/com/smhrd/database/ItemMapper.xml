@@ -6,10 +6,14 @@
 
 
 
-<mapper namespace="BoardMapper">
+<mapper namespace="ItemMapper">
 	
 	
 	<!-- sql문 작성  -->
+	
+	<insert id="uploadItem" parameterType="Item">
+		INSERT INTO tb_item VALUES (null, #{item_name}, #{item_tone}, #{item_color}, #{item_info}, #{item_category}, #{item_price}, #{item_url})
+	</insert>
 	
 	
 </mapper>
