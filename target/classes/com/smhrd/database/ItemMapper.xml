@@ -16,4 +16,9 @@
 	</insert>
 	
 	
+	<select id="categoryItem" parameterType="String" resultType="Item">  <!-- resultType은 개별 행에 적용되는 것이므로 모든 행을 반환한다고 하더라도
+																					List가 아닌 개별 행의 자료형인 Item을 써야됨  -->
+		SELECT * FROM tb_item WHERE item_category = #{category}
+	</select>
+	
 </mapper>

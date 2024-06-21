@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -19,7 +20,7 @@ public class ItemDAO {
 	
 	
 	
-	
+	// 가구 테이블 DB 구축 (insert 반복문)
 	public int insertItems(List<Item> items) {
 		SqlSession session = factory.openSession();
         int totalCount = 0;
@@ -42,10 +43,48 @@ public class ItemDAO {
 	}
 
 	
+	// 가구 하나만 DB 저장
+	public int insertItem(Item item) {
+		SqlSession session = factory.openSession();
+		int cnt = 0;
+		
+		try {
+			cnt = session.insert("ItemMapper.uploadItem", item);
+			
+			if(cnt > 0) {
+				session.commit();
+			}else {
+				System.out.println("저장 실패");
+				session.rollback();
+			}
+			
+		} catch (Exception e) {
+			System.out.println("가구 저장 실패");
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return cnt;
+	}
 	
 	
-	
-	
+	// 가구 카테고리 조건 걸어서 select
+	public List<Item> selectCategoryItem(String category){
+		SqlSession session = factory.openSession();
+		List<Item> items = null;
+		
+		try {
+			items = session.selectList("ItemMapper.categoryItem",category);
+			
+		} catch (Exception e) {
+			System.out.println("카테고리 조회 실패1");
+			e.printStackTrace();
+		}
+		
+		return items;
+		
+	}
 	
 	
 }
