@@ -18,7 +18,7 @@
 
 
 	
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="data:;base64,iVBORw0KGgo=">
 
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet'
@@ -138,32 +138,32 @@
 					<br>
 					<span class="con_btn" style="background-color: rgb(255, 255, 255); color: black;">
 						<div class="con">
-							<button class="con_btn" ><img class=con_img src="../images/침대.png" alt="">
+							<button class="con_btn category_btn" id="침대"><img class=con_img src="../images/침대.png" alt="">
 								<span class="caption">침대</span>
 							</button>
 
-							<button class="con_btn"> <img class=con_img src="../images/쇼파.png" alt="">
+							<button class="con_btn category_btn" id="소파"> <img class=con_img src="../images/쇼파.png" alt="">
 								<span class="caption">쇼파</span>
 							</button>
-							<button class="con_btn"> <img class=con_img src="../images/서랍.png" alt="">
+							<button class="con_btn category_btn" id="서랍"> <img class=con_img src="../images/서랍.png" alt="">
 								<span class="caption">서랍</span>
 							</button>
-							<button class="con_btn"> <img class=con_img src="../images/옷장.png" alt="">
+							<button class="con_btn category_btn" id="옷장"> <img class=con_img src="../images/옷장.png" alt="">
 								<span class="caption">옷장</span>
-
 							</button>
-							<button class="con_btn"> <img class=con_img src="../images/의자.png" alt="">
+							<button class="con_btn category_btn" id="의자"> <img class=con_img src="../images/의자.png" alt="">
 								<span class="caption">의자</span>
 							</button>
-							<button class="con_btn"><img class=con_img src="../images/식탁.png" alt="">
+							<button class="con_btn category_btn" id="식탁"><img class=con_img src="../images/식탁.png" alt="">
 								<span class="caption">식탁</span>
 							</button>
-							<button class="con_btn"><img class=con_img src="../images/책상.png" alt="">
+							<button class="con_btn category_btn" id="책상"><img class=con_img src="../images/책상.png" alt="">
 								<span class="caption">책상</span>
 							</button>
-							<button class="con_btn"><img class=con_img src="../images/책장.png" alt="">
+							<button class="con_btn category_btn" id="책장"><img class=con_img src="../images/책장.png" alt="">
 								<span class="caption">책장</span>
 							</button>
+							</div>
 					</span>
 				</h4>
 			</div>
@@ -254,28 +254,27 @@
 			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
 
 
-				<a onclick="showPopup()">
+				<button type="button" onclick="showPopup()">
 
-
-					<img src="../item_image/1.jpg" class="img-responsive" alt="Product Thumbnail">
-
+					<div class="item_container">
+					<img src="../item_image/001.png" class="img-responsive" alt="Product Thumbnail">
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
+					</div>
 
-
-				</a>
+				</button>
 			</div>
 			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
 
 
 				<a onclick="showPopup()">
 
-
+					<div class="item_container">
 					<img src="../item_image/100.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
-
+					</div>
 
 				</a>
 			</div>
@@ -284,12 +283,12 @@
 
 				<a onclick="showPopup()">
 
-
+					<div class="item_container">
 					<img src="../item_image/600.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
-
+					</div>
 
 				</a>
 			</div>
@@ -298,12 +297,12 @@
 
 				<a onclick="showPopup()">
 
-
+					<div class="item_container">
 					<img src="../item_image/500.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
-
+					</div>
 
 				</a>
 			</div>
@@ -312,12 +311,12 @@
 
 				<a onclick="showPopup()">
 
-
+					<div class="item_container">
 					<img src="../item_image/300.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
-
+					</div>
 
 				</a>
 			</div>
@@ -326,12 +325,12 @@
 
 				<a onclick="showPopup()">
 
-
+					<div class="item_container">
 					<img src="../item_image/200.jpg" class="img-responsive" alt="Product Thumbnail">
 
 					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
 					<h3 class="price">299,000원</h3>
-
+					</div>
 
 				</a>
 			</div>
@@ -347,97 +346,67 @@
 			
 			
 			<%}}else { %>  <!-- 로그인 안했을 때 -->
-				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-
-					<img src="../item_image/1.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
-
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-
-					<img src="../item_image/100.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
-
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-
-					<img src="../item_image/600.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
-
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-
-					<img src="../item_image/500.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
-
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-
-					<img src="../item_image/300.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
-
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-
-					<img src="../item_image/200.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
-
-
-				</a>
-			</div>
+				<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
+							<h3 class="price">299,000원</h3>
+						</a>
+					</div>
+				</div>
+				<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
+							<h3 class="price">299,000원</h3>
+						</a>
+					</div>
+				</div>
+				<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
+							<h3 class="price">299,000원</h3>
+						</a>
+					</div>
+				</div>
+			<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
+							<h3 class="price">299,000원</h3>
+						</a>
+					</div>
+				</div>
+			<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
+							<h3 class="price">299,000원</h3>
+						</a>
+					</div>
+				</div>
+			<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
+							<h3 class="price">299,000원</h3>
+						</a>
+					</div>
+				</div>
 			<%} %>
 
 
 
 
 			<!-- 팝업 창 -->
-			<div class="overlay" id="overlay" onclick="closePopup()"></div>
+			<div class="overlay" id="overlay"></div>
 			<div class="popup" id="popup">
 				<span class="popup-close" onclick="closePopup()">X</span>
 				<div>카테고리 경로</div>

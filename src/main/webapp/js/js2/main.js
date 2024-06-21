@@ -1,4 +1,6 @@
-;(function () {
+$(document).ready(function() {
+
+(function () {
 	
 	'use strict';
 
@@ -179,11 +181,7 @@
 
 
 }());
-document.addEventListener('DOMContentLoaded', function() {
-    // Replace 'M_Y3' with the logged-in user's username
-    var username = 'M_Y3';  // This should be dynamically set
-    document.getElementById('username').textContent = username;
-});
+
 
 // 색상
 function toggleDropdown() {
@@ -216,10 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const photoPreview = document.getElementById('photo-preview');
     const housewarmingPreview = document.getElementById('housewarming-preview');
 
-    // 사진 업로드 입력 요소에 변경 이벤트 리스너를 추가
-    photoInput.addEventListener('change', function() {
-        handleFileUpload(photoInput, photoPreview, photoCount);
-    });
+    
 
     // 집들이 업로드 입력 요소에 변경 이벤트 리스너를 추가
     housewarmingInput.addEventListener('change', function() {
@@ -245,18 +240,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-// 팝업 js 
-function showPopup() {
-	document.getElementById('popup').style.display = 'block';
-	document.getElementById('overlay').style.display = 'block';
-	
-}
 
-// 팝업을 닫는 함수
-function closePopup() {
-	document.getElementById('popup').style.display = 'none';
-	document.getElementById('overlay').style.display = 'none';
-}
+
+
 // 수량 조절 함수
 function changeQuantity(amount) {
 	const quantityInput = document.getElementById('quantity');
@@ -270,3 +256,5 @@ function changeQuantity(amount) {
 function contactUs() {
 	alert("문의하기 기능이 아직 구현되지 않았습니다.");
 }
+
+});

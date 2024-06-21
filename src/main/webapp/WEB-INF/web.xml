@@ -28,6 +28,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.LogoutService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ItemCategoryService</servlet-name>
+  	<display-name>ItemCategoryService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ItemCategoryService</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
   	<url-pattern>/join</url-pattern>
@@ -43,5 +49,9 @@
   <servlet-mapping>
   	<servlet-name>LogoutService</servlet-name>
   	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ItemCategoryService</servlet-name>
+  	<url-pattern>/category</url-pattern>
   </servlet-mapping>
 </web-app>
