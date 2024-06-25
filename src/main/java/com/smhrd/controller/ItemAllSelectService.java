@@ -14,44 +14,29 @@ import com.smhrd.model.Item;
 import com.smhrd.model.ItemDAO;
 
 
-public class ItemCategoryService extends HttpServlet {
+public class ItemAllSelectService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
-		String category = request.getParameter("category");
-		
-		System.out.println("111"+category);
-	
 		ItemDAO dao =  new ItemDAO();
-		List<Item> items =  dao.selectCategoryItem(category);
-	
+		List<Item> items =  dao.selectAllItem();
+		
 		if(items != null) {
-			System.out.println("카테고리 조회 성공");
-			System.out.println("222" +items.get(0).getItem_category());
-			
 			JSONObject jsonResponse = new JSONObject();
 	        jsonResponse.put("items", items);
-
 	        response.setContentType("application/json"); // 응답의 Content-Type을 JSON으로 설정
 	        response.setCharacterEncoding("UTF-8");
 	        response.getWriter().write(jsonResponse.toString()); // JSON 응답을 작성
-			
 		}else {
-			System.out.println("카테고리 조회 실패 333");
-			
+			System.out.println("가구 전체 조회 실패 333");
 			JSONObject jsonResponse = new JSONObject();
-		    jsonResponse.put("error", "해당 카테고리에 대한 아이템이 없습니다.");
-
+		    jsonResponse.put("error", "가구 전체 조회 실패요");
 		    response.setContentType("application/json");
 		    response.setCharacterEncoding("UTF-8");
 		    response.getWriter().write(jsonResponse.toString());
 		}
-	
-	
-	
 	}
 
 }

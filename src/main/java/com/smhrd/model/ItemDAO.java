@@ -2,6 +2,7 @@ package com.smhrd.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -87,4 +88,56 @@ public class ItemDAO {
 	}
 	
 	
-}
+	// 모든 가구 select
+	public List<Item> selectAllItem(){
+		SqlSession session = factory.openSession();
+		List<Item> items = null;
+		try {
+			items = session.selectList("ItemMapper.allItem");
+		} catch (Exception e) {
+			System.out.println("가구 전체 조회 실패111");
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		
+		return items;
+		}
+
+	
+	// 가구 색상 조건 걸어서 select
+	public List<Item> selectColorItem(String color){
+		SqlSession session = factory.openSession();
+		List<Item> items = null;
+		
+		try {
+			items = session.selectList("ItemMapper.colorItem",color);
+			
+		} catch (Exception e) {
+			System.out.println("컬러 조회 실패1");
+			e.printStackTrace();
+		}
+		
+		return items;
+		
+	}
+
+
+
+	// 가구 카테고리&색상 조건 동시에 걸어서 select
+	public List<Item> selectTwoOptionItem(Map<String, String> options){
+		SqlSession session = factory.openSession();
+		List<Item> items = null;
+		
+		try {
+			items = session.selectList("ItemMapper.twoOptionItem" , options );
+		} catch (Exception e) {
+			System.out.println("투옵션 조회 실패111");
+			e.printStackTrace();
+		}
+		
+		
+		return items;
+		}
+	}

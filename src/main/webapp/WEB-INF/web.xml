@@ -34,6 +34,24 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ItemCategoryService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ItemAllSelectService</servlet-name>
+  	<display-name>ItemAllSelectService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ItemAllSelectService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ItemColorSelectService</servlet-name>
+  	<display-name>ItemColorSelectService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ItemColorSelectService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ItemTwoOptionSelectService</servlet-name>
+  	<display-name>ItemTwoOptionSelectService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ItemTwoOptionSelectService</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
   	<url-pattern>/join</url-pattern>
@@ -52,6 +70,18 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>ItemCategoryService</servlet-name>
-  	<url-pattern>/category</url-pattern>
+  	<url-pattern>/categorySelectItem</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ItemAllSelectService</servlet-name>
+  	<url-pattern>/itemAll</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ItemColorSelectService</servlet-name>
+  	<url-pattern>/colorSelectItem</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ItemTwoOptionSelectService</servlet-name>
+  	<url-pattern>/twoOptionItem</url-pattern>
   </servlet-mapping>
 </web-app>
