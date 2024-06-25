@@ -11,14 +11,43 @@
 	
 	<!-- sql문 작성  -->
 	
+	<!-- 가구 db 저장  -->
 	<insert id="uploadItem" parameterType="Item">
 		INSERT INTO tb_item VALUES (null, #{item_name}, #{item_tone}, #{item_color}, #{item_info}, #{item_category}, #{item_price}, #{item_url})
 	</insert>
 	
 	
+	
+	
+	<!-- 카테고리 필터링 조회 -->
 	<select id="categoryItem" parameterType="String" resultType="Item">  <!-- resultType은 개별 행에 적용되는 것이므로 모든 행을 반환한다고 하더라도
 																					List가 아닌 개별 행의 자료형인 Item을 써야됨  -->
 		SELECT * FROM tb_item WHERE item_category = #{category}
 	</select>
+	
+	
+	
+	
+	<!-- 컬러 필터링 조회 -->
+	<select id="colorItem" parameterType="String" resultType="Item">  
+		SELECT * FROM tb_item WHERE item_color = #{color}
+	</select>
+	
+	
+	
+	<!-- 모든 가구 조회 -->
+	<select id="allItem" resultType="Item">
+		SELECT * FROM tb_item
+	</select>
+	
+	
+	<select id="twoOptionItem" parameterType="Map" resultType="Item">
+		SELECT * FROM tb_item WHERE item_category = #{category} and item_color = #{color}
+	</select>
+	
+	
+	
+	
+	
 	
 </mapper>

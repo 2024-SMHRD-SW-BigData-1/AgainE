@@ -243,14 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// 수량 조절 함수
-function changeQuantity(amount) {
-	const quantityInput = document.getElementById('quantity');
-	let currentQuantity = parseInt(quantityInput.value);
-	currentQuantity += amount;
-	if (currentQuantity < 1) currentQuantity = 1;
-	quantityInput.value = currentQuantity;
-}
 
 // 문의하기 버튼 함수
 function contactUs() {

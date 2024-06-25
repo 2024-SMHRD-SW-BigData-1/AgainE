@@ -102,32 +102,33 @@
 					<br>
 					<span class="con_btn" style="background-color: rgb(255, 255, 255); color: black;">
 						<div class="con">
-							<button class="con_btn" ><img class=con_img src="../images/침대.png" alt="">
+							<button class="con_btn category_btn" id="침대"><img class=con_img src="../images/침대.png" alt="">
 								<span class="caption">침대</span>
 							</button>
 
-							<button class="con_btn"> <img class=con_img src="../images/쇼파.png" alt="">
+							<button class="con_btn category_btn" id="소파"> 
+								<img class=con_img src="../images/소파.png" alt="">
 								<span class="caption">쇼파</span>
 							</button>
-							<button class="con_btn"> <img class=con_img src="../images/서랍.png" alt="">
+							<button class="con_btn category_btn" id="서랍"> <img class=con_img src="../images/서랍.png" alt="">
 								<span class="caption">서랍</span>
 							</button>
-							<button class="con_btn"> <img class=con_img src="../images/옷장.png" alt="">
+							<button class="con_btn category_btn" id="옷장"> <img class=con_img src="../images/옷장.png" alt="">
 								<span class="caption">옷장</span>
-
 							</button>
-							<button class="con_btn"> <img class=con_img src="../images/의자.png" alt="">
+							<button class="con_btn category_btn" id="의자"> <img class=con_img src="../images/의자.png" alt="">
 								<span class="caption">의자</span>
 							</button>
-							<button class="con_btn"><img class=con_img src="../images/식탁.png" alt="">
+							<button class="con_btn category_btn" id="식탁"><img class=con_img src="../images/식탁.png" alt="">
 								<span class="caption">식탁</span>
 							</button>
-							<button class="con_btn"><img class=con_img src="../images/책상.png" alt="">
+							<button class="con_btn category_btn" id="책상"><img class=con_img src="../images/책상.png" alt="">
 								<span class="caption">책상</span>
 							</button>
-							<button class="con_btn"><img class=con_img src="../images/책장.png" alt="">
+							<button class="con_btn category_btn" id="책장"><img class=con_img src="../images/책장.png" alt="">
 								<span class="caption">책장</span>
 							</button>
+							</div>
 					</span>
 				</h4>
 			</div>
@@ -142,7 +143,7 @@
 								<span class="caption">침대</span>
 							</button>
 
-							<button class="con_btn category_btn" id="소파"> <img class=con_img src="../images/쇼파.png" alt="">
+							<button class="con_btn category_btn" id="소파"> <img class=con_img src="../images/소파.png" alt="">
 								<span class="caption">쇼파</span>
 							</button>
 							<button class="con_btn category_btn" id="서랍"> <img class=con_img src="../images/서랍.png" alt="">
@@ -179,19 +180,19 @@
 				<br>
 				<br>
 				<div class="color_lst">
-					<div class="color-option" style="background-color: #FF0000;"></div>
-					<div class="color-option" style="background-color: #FF7F00;"></div>
-					<div class="color-option" style="background-color: #FFFF00;"></div>
-					<div class="color-option" style="background-color: #00FF00;"></div>
-					<div class="color-option" style="background-color: #00FFFF;"></div>
-					<div class="color-option" style="background-color: #0000FF;"></div>
-					<div class="color-option" style="background-color: #8B00FF;"></div>
-					<div class="color-option" style="background-color: #FF00FF;"></div>
-					<div class="color-option" style="background-color: #FFE4B5;"></div>
-					<div class="color-option" style="background-color: #8B4513;"></div>
-					<div class="color-option" style="background-color: #808080;"></div>
-					<div class="color-option" style="background-color: #F5F5F5;"></div>
-					<div class="color-option" style="background-color: #000000;"></div>
+					<div class="color-option" id="레드" style="background-color: #FF0000;"></div>
+					<div class="color-option" id="오렌지" style="background-color: #FF7F00;"></div>
+					<div class="color-option" id="옐로우" style="background-color: #FFFF00;"></div>
+					<div class="color-option" id="그린" style="background-color: #00FF00;"></div>
+					<div class="color-option" id="라이트블루" style="background-color: #00FFFF;"></div>
+					<div class="color-option" id="네이비" style="background-color: #0000FF;"></div>
+					<div class="color-option" id="퍼플" style="background-color: #8B00FF;"></div>
+					<div class="color-option" id="핑크" style="background-color: #FF00FF;"></div>
+					<div class="color-option" id="베이지" style="background-color: #FFE4B5;"></div>
+					<div class="color-option" id="브라운" style="background-color: #8B4513;"></div>
+					<div class="color-option" id="그레이" style="background-color: #808080;"></div>
+					<div class="color-option" id="화이트" style="background-color: #F5F5F5;"></div>
+					<div class="color-option" id="블랙" style="background-color: #000000;"></div>
 				</div>
 			</h4>
 				<%} }else { %> <!-- 로그인 안했을 때 -->
@@ -199,21 +200,21 @@
 				<br>
 				<br>
 				<div class="color_lst">
-					<div class="color-option" style="background-color: #FF0000;"></div>
-					<div class="color-option" style="background-color: #FF7F00;"></div>
-					<div class="color-option" style="background-color: #FFFF00;"></div>
-					<div class="color-option" style="background-color: #00FF00;"></div>
-					<div class="color-option" style="background-color: #00FFFF;"></div>
-					<div class="color-option" style="background-color: #0000FF;"></div>
-					<div class="color-option" style="background-color: #8B00FF;"></div>
-					<div class="color-option" style="background-color: #FF00FF;"></div>
-					<div class="color-option" style="background-color: #FFE4B5;"></div>
-					<div class="color-option" style="background-color: #8B4513;"></div>
-					<div class="color-option" style="background-color: #808080;"></div>
-					<div class="color-option" style="background-color: #F5F5F5;"></div>
-					<div class="color-option" style="background-color: #000000;"></div>
+					<div class="color-option" id="레드" style="background-color: #FF0000;"></div>
+					<div class="color-option" id="오렌지" style="background-color: #FF7F00;"></div>
+					<div class="color-option" id="옐로우" style="background-color: #FFFF00;"></div>
+					<div class="color-option" id="그린" style="background-color: #00FF00;"></div>
+					<div class="color-option" id="라이트블루" style="background-color: #00FFFF;"></div>
+					<div class="color-option" id="네이비" style="background-color: #0000FF;"></div>
+					<div class="color-option" id="퍼플" style="background-color: #8B00FF;"></div>
+					<div class="color-option" id="핑크" style="background-color: #FF00FF;"></div>
+					<div class="color-option" id="베이지" style="background-color: #FFE4B5;"></div>
+					<div class="color-option" id="브라운" style="background-color: #8B4513;"></div>
+					<div class="color-option" id="그레이" style="background-color: #808080;"></div>
+					<div class="color-option" id="화이트" style="background-color: #F5F5F5;"></div>
+					<div class="color-option" id="블랙" style="background-color: #000000;"></div>
 				</div>
-			</h4>
+					</h4>
 				<%} %>
 				
 				
@@ -250,90 +251,60 @@
 
 		<% if(user != null){ %>  <!-- 로그인 했을 시  -->
 				 	<%if(user.getUser_type().equals("f") ||  user.getUser_type().equals("t")){ %> <!-- 사용자일때 -->
-
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<button type="button" onclick="showPopup()">
-
-					<div class="item_container">
-					<img src="../item_image/001.png" class="img-responsive" alt="Product Thumbnail">
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
+				<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="#" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">로딩중...</h5>
+							<h3 class="price">로딩중...</h3>
+						</a>
 					</div>
-
-				</button>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-					<div class="item_container">
-					<img src="../item_image/100.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
+				</div>
+				<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="#" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">로딩중...</h5>
+							<h3 class="price">로딩중...</h3>
+						</a>
 					</div>
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-					<div class="item_container">
-					<img src="../item_image/600.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
+				</div>
+				<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="#" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">로딩중...</h5>
+							<h3 class="price">로딩중...</h3>
+						</a>
 					</div>
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-					<div class="item_container">
-					<img src="../item_image/500.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
+				</div>
+			<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="#" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">로딩중...</h5>
+							<h3 class="price">로딩중...</h3>
+						</a>
 					</div>
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-					<div class="item_container">
-					<img src="../item_image/300.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
+				</div>
+			<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="#" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">로딩중...</h5>
+							<h3 class="price">로딩중...</h3>
+						</a>
 					</div>
-
-				</a>
-			</div>
-			<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-
-
-				<a onclick="showPopup()">
-
-					<div class="item_container">
-					<img src="../item_image/200.jpg" class="img-responsive" alt="Product Thumbnail">
-
-					<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-					<h3 class="price">299,000원</h3>
+				</div>
+			<div class="item_container">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						<a class="showPopup">
+							<img src="#" class="img-responsive" alt="Product Thumbnail">
+							<h5 class="title">로딩중...</h5>
+							<h3 class="price">로딩중...</h3>
+						</a>
 					</div>
-
-				</a>
-			</div>
+				</div>
 			 
 			<%}else if(user.getUser_type().equals("a")){ %>   <!-- 관리자로 로그인 시 -->
 				<div>
@@ -347,58 +318,7 @@
 			
 			<%}}else { %>  <!-- 로그인 안했을 때 -->
 				<div class="item_container">
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-						<a class="showPopup">
-							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
-							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-							<h3 class="price">299,000원</h3>
-						</a>
-					</div>
-				</div>
-				<div class="item_container">
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-						<a class="showPopup">
-							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
-							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-							<h3 class="price">299,000원</h3>
-						</a>
-					</div>
-				</div>
-				<div class="item_container">
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-						<a class="showPopup">
-							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
-							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-							<h3 class="price">299,000원</h3>
-						</a>
-					</div>
-				</div>
-			<div class="item_container">
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-						<a class="showPopup">
-							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
-							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-							<h3 class="price">299,000원</h3>
-						</a>
-					</div>
-				</div>
-			<div class="item_container">
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-						<a class="showPopup">
-							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
-							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-							<h3 class="price">299,000원</h3>
-						</a>
-					</div>
-				</div>
-			<div class="item_container">
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-						<a class="showPopup">
-							<img src="../item_image/200.png" class="img-responsive" alt="Product Thumbnail">
-							<h5 class="title">드레스덴 정품 조이헤브릭 호텔식 의자</h5>
-							<h3 class="price">299,000원</h3>
-						</a>
-					</div>
+					
 				</div>
 			<%} %>
 
@@ -406,7 +326,7 @@
 
 
 			<!-- 팝업 창 -->
-			<div class="overlay" id="overlay"></div>
+			<div class="overlay" id="overlay">
 			<div class="popup" id="popup">
 				<span class="popup-close" onclick="closePopup()">X</span>
 				<div>카테고리 경로</div>
@@ -416,25 +336,27 @@
 						<h4>드레스덴 정품 조이헤브릭 호텔식 의자</h4>
 						<h4>299,000원</h4>
 						<div class="quantity-control">
-							<button onclick="changeQuantity(-1)" id="decrease-quantity">—</button>
+							<button id="decrease-quantity">—</button>
 							<input type="number" id="quantity" value="1" min="1">
-							<button onclick="changeQuantity(1)" id="increase-quantity">+</button>
+							<button id="increase-quantity">+</button>
 						</div>
 						<br>
 						<div class="pbtn">
 							<button class="po_btn">장바구니</button>
 							<button class="p_btn">바로구매</button>
 						</div>
-
-					</div>
-
+							<br>
+							<div>
+								<h4><strong> [간단설명] </strong></h4>
+								<p>모던한 느낌의 빈티지카 어쿠르 저지코 뒤쪽에 위치</p>
+								<p>사이즈: l: 0.47*0.5245, 35 35&65, 6.45</p>
+							</div>
+							<button class="o_btn" onclick="contactUs()">문의하기</button>
+						</div>
+						
+					</div> <!-- 팝업 콘텐츠 끝태그 -->
 				</div>
-				<br>
-				<h4><strong> [간단설명] </strong></h4>
-				<p>모던한 느낌의 빈티지카 어쿠르 저지코 뒤쪽에 위치</p>
-				<p>사이즈: l: 0.47*0.5245, 35 35&65, 6.45</p>
-
-				<button class="o_btn" onclick="contactUs()">문의하기</button>
+				
 			</div>
 
 		</div>
