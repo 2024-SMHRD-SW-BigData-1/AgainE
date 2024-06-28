@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.container {
+
+    max-width: 800px;
+    height: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+  
+}
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.inquiry-type {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+.inquiry-type button {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    flex: 1;
+    margin: 0 5px;
+}
+.inquiry-type button.active {
+    background-color: #E4F0D5;
+    border-color: #7cb6a9;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+.inquiry-content input {
+    
+    width:780px;
+    padding: 10px;
+    border: 1px solid #c2bebe;
+    border-radius: 5px;
+    height: 100px;
+    vertical-align: top
+}
+.footer {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 20px;
+}
+.footer p {
+    margin: 5px 0;
+}
+
+/* 완료 버튼 */
+.submit-btn {
+    margin-top: 40px;
+    background-color: #E4F0D5;
+    color: #fff;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    font-size: larger;
+    margin-top: 70px;
+}
+::-webkit-file-upload-button{
+   
+    margin-top: 30px;
+    background-color: #E4F0D5;
+    border: 1px solid #E4F0D5;
+    border-radius: 20px;
+}
+h5{
+    display: none;
+    margin-top: 50px;
+    margin-left: 300px;
+}
+.popup-close{
+    margin-left: 750px;
+    font-size: 40px;
+    background-color: white;
+    border: #fff;
+    
+}
+
+.custom-select {
+    display: inline-block;
+    /* width: 200px; */
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #fff;
+    font-size: 14px;
+}
+.inquiry-content-title input {
+    margin-bottom: 30px;
+    width:780px;
+    padding: 10px;
+    border: 1px solid #c2bebe;
+    border-radius: 5px;
+    height: 60px;
+    vertical-align: top
+}

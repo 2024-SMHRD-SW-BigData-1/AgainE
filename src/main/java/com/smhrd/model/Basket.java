@@ -24,6 +24,9 @@ public class Basket {
 
     // 장바구니 상태 
     private String basket_status;
+    
+    // 장바구니 총 가격
+    private Long total_item;
 
 	public Basket(String user_id, Long item_idx, Long cnt, LocalDateTime created_at,
 			String basket_status) {
@@ -85,6 +88,14 @@ public class Basket {
 
 	public void setBasket_status(String basket_status) {
 		this.basket_status = basket_status;
+	}
+
+	public Long getTotal_item() {
+		return total_item;
+	}
+
+	public void setTotal_item(Long total_item) {
+		this.total_item = total_item;
 	}
     
 	

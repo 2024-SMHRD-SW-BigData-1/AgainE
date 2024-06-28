@@ -1,0 +1,114 @@
+@font-face {
+   font-family: 'GongGothicMedium';
+   src:
+      url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+*{
+   font-family: 'GongGothicMedium';
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+ box-shadow: none;
+}
+
+main {
+    margin: auto;
+
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+main h3{
+   margin-bottom:30px;
+}
+.order-status,
+.order-list {
+    margin-bottom: 30px;
+    
+}
+
+.order-status table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-status th{
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+    text-align: center;
+    border-top: 3px solid #b5b0b0;
+}
+
+.order-status td{
+    padding: 8px;
+    text-align: center;
+    border-bottom: 3px solid #b5b0b0;
+}
+
+.order-item {
+   
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+}
+
+.order-date {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.product img {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.product-details h5 {
+    margin: 0 0 5px 0;
+
+    font-size: 20px;
+    align-items: center;
+    display: inline;
+
+}
+
+.mypage-button {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    background-color: #b5b0b0;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+   margin: auto;
+   font-weight: bold;
+}
+
+.mypage-button:hover {
+    background-color: #555;
+}

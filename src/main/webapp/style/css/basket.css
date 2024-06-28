@@ -1,0 +1,89 @@
+@font-face {
+   font-family: 'GongGothicMedium';
+   src:
+      url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+body {
+   font-family: 'GongGothicMedium';
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /*    height: 100vh; */
+   margin-top: 30px;
+}
+
+#fh5co-main {
+   width: 80%; /* 양옆에 공간을 주기 위해 너비를 80%로 설정 */
+   max-width: 1200px; /* 최대 너비 설정 */
+   padding: 20px;
+}
+
+header {
+   width: 100%;
+   padding: 10px 0;
+   text-align: center;
+
+   /* margin-top: 50px; */
+}
+
+main {
+   margin: auto;
+   background-color: #ffffff;
+   padding: 20px;
+   border-radius: 10px;
+   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+   width: 800px;
+}
+
+h2 {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   font-size: 30px;
+   margin-bottom: 20px;
+}
+
+#update-btn:hover {
+   background-color: #dae7c9;
+}
+
+#delete-btn {
+   background-color: #bebbbb79;
+   color: #fff;
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+#delete-btn:hover {
+   background-color: #dae7c9;
+}
+
+.shop_N {
+   margin-top: 100px;
+   text-align: center;
+}
+
+.shop_im {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 50vh;
+}
+
+.ma-a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: medium;
+   text-decoration: underline;
+   /*   height: 5vh; */ /* 원하는 높이로 설정 */
+}
+
+.shop_N h2 {
+   font-weight: 200;
+}

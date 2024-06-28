@@ -2,6 +2,7 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,6 +32,12 @@ public class LoginService extends HttpServlet {
 			System.out.println("로그인 성공");
 			HttpSession session = request.getSession();
 			session.setAttribute("login_user", user);
+			
+			Cookie cookie = new Cookie("JSESSIONID", session.getId());
+	        cookie.setPath("/");  // 쿠키가 모든 경로에서 유효하도록 설정
+	        cookie.setHttpOnly(true);  // 클라이언트 측 스크립트에서 쿠키에 접근하지 못하도록 설정 (보안)
+            response.addCookie(cookie);
+			
 			response.sendRedirect("html/index.jsp");
 		}else {
 			response.sendRedirect("html/login.jsp?login_success=false");

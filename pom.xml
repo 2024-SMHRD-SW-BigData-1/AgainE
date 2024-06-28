@@ -57,6 +57,16 @@
     <artifactId>commons-csv</artifactId>
     <version>1.8</version>
 	</dependency>
+	<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.12.3</version> <!-- 적절한 버전을 선택하세요 -->
+	</dependency>
+	<dependency>
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-jsr310</artifactId>
+    <version>2.12.3</version> <!-- 적절한 버전을 선택하세요 -->
+</dependency>
   </dependencies>
 
   <build>
