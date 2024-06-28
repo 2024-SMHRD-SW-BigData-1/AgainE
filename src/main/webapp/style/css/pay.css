@@ -1,0 +1,119 @@
+/* 전체 폼 스타일 */
+form.or {
+  width: 80%;
+  margin: 0 auto;
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 테이블 스타일 */
+form.or table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* 캡션 스타일 */
+form.or h4 {
+  /* font-size: 1.5em; */
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #f4f4f4;
+
+padding: 20px;
+}
+
+/* 테이블 헤더 스타일 */
+form.or th {
+  text-align: right;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  font-weight: normal;
+  width: 200px;
+}
+
+/* 테이블 데이터 스타일 */
+form.or td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-left: 30px;
+}
+
+/* 레이블과 데이터의 공백 제거 */
+form.or label {
+  margin: 0;
+  padding: 0;
+}
+
+    /* 스판 태그 스타일 */
+        form.or span {
+            flex: 2;
+            margin: 0;
+            padding: 0;
+            border-left: 1px solid #ddd;
+            padding-left: 30px;
+        }
+  .or_b{
+    border-bottom: 1px solid #ddd; ;
+    margin-bottom: 30px;
+    margin-left: 20px; /* 간격 조정 */
+  }
+  input[type="radio"] {
+    transform: scale(2.0); /* 크기 조정 */
+  
+    margin: 20px;
+ 
+}
+.Su label{
+  border-bottom: 1px solid #ddd; 
+ 
+  width: 1300px;
+}
+
+ /* 추가 입력 필드 숨기기 */
+ #card-options {
+  display: none;
+  margin-top: 10px;
+}
+/* #card_Type{
+  transform: none;
+
+} */
+#card-options label{
+  transform: none;
+}
+select {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  
+  outline: 0;
+ 
+  color: black;
+  border: 1px solid rgb(238, 238, 238);
+  padding: 4px;
+  border-radius: 9px;
+}
+.C{
+padding: 10px;
+  background-color: #f4f4f4;
+ font-weight: 700;
+  border-bottom: 1px solid #ddd; 
+  padding: 10px;
+}
+#submit-btn {
+ 
+  background-color: #E4F0D5;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  font-size: larger;
+  margin-top: 70px;
+}
+
+

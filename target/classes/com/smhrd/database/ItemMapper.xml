@@ -33,6 +33,9 @@
 		SELECT * FROM tb_item WHERE item_color = #{color}
 	</select>
 	
+	<select id="oneItem" parameterType="String" resultType="Item">
+		SELECT * FROM tb_item WHERE item_idx = #{item_idx}
+	</select>
 	
 	
 	<!-- 모든 가구 조회 -->
@@ -41,13 +44,31 @@
 	</select>
 	
 	
+	<!-- 컬러&카테고리 동시 필터링  -->
 	<select id="twoOptionItem" parameterType="Map" resultType="Item">
 		SELECT * FROM tb_item WHERE item_category = #{category} and item_color = #{color}
 	</select>
 	
 	
+	<!-- 톤온톤(같은 색) 조회  -->
+	<select id="selectToneOnToneItem" parameterType="String" resultType="Item">
+		SELECT * FROM tb_item WHERE item_color = #{user_room_color}
+	</select>
 	
+	<!-- 톤인톤(같은 톤) 조회 -->
+	<select id="selectToneInToneItem" parameterType="String" resultType="Item">
+		SELECT * FROM tb_item WHERE item_tone = #{user_room_tone}
+	</select>
 	
+	<!-- 카테고리&톤온톤 조회 -->
+	<select id="selectToneOnToneCategoryItem" parameterType="Map" resultType="Item">
+		SELECT * FROM tb_item WHERE item_category = #{category} and item_color = #{color}
+	</select>
+	
+	<!-- 카테고리&톤인톤 조회 -->
+	<select id="selectToneInToneCategoryItem" parameterType="Map" resultType="Item">
+		SELECT * FROM tb_item WHERE item_category = #{category} and item_tone = #{tone}
+	</select>
 	
 	
 </mapper>

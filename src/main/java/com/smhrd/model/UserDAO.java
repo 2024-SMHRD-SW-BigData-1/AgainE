@@ -79,7 +79,53 @@ public class UserDAO {
 		return user2;
 	}
 	
+	// 회원 방 정보 업데이트
+	public int updateUserRoom(User user) {
+		int cnt = 0;
+		SqlSession session = factory.openSession();
+		
+		try {
+			cnt = session.update("UserMapper.updateUserRoom", user);
+			if(cnt > 0) {
+				session.commit();
+			}else {
+				System.out.println("회원 방 정보 업데이트 실패..");
+				session.rollback();
+			}
+			
+		} catch (Exception e) {
+			System.out.println("유저 방정보 업데이트 실패");
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return cnt;
+	}
 	
 	
+	// 회원 방 정보 업데이트 성공 시 회원 유형 바꾸기
+	public int updateUserType(User user) {
+		int cnt = 0;
+		SqlSession session = factory.openSession();
+		
+		try {
+			cnt = session.update("UserMapper.updateUserType", user);
+			if(cnt > 0) {
+				session.commit();
+			}else {
+				System.out.println("유저 타입 업데이트 실패...");
+				session.rollback();
+			}
+			
+		} catch (Exception e) {
+			System.out.println("유저 타입 업데이트 실패");
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return cnt;
+	}
 	
 }

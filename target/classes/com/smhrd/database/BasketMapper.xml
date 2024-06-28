@@ -6,10 +6,30 @@
 
 
 
-<mapper namespace="BoardMapper">
+<mapper namespace="BasketMapper">
 	
+	<!-- 장바구니 전부 가지고 오기 -->
+	<select id="basketSelectAll" parameterType="String" resultType="Basket">  
+		SELECT * FROM tb_basket WHERE user_id = #{user_id}
+	</select>
 	
-	<!-- sql문 작성  -->
+	<!-- 장바구니 저장 -->
+	<insert id="basketInsert" parameterType="Basket">
+		INSERT INTO tb_basket VALUES (null, #{user_id}, #{item_idx}, #{cnt}, #{created_at}, #{basket_status}, null) 
+	</insert>
+		
+	<!-- 장바구니 수량 업데이트 -->
+	<update id="basketUpdateCnt" parameterType="Map">
+		UPDATE tb_basket SET cnt = #{cnt} WHERE basket_idx = #{basket_idx}
+	</update>
 	
+	<!-- 장바구니 하나만 가져오기 -->
+	<select id="basketSelectOne" parameterType="Long" resultType="Basket">
+		SELECT * FROM tb_basket WHERE basket_idx = #{basket_idx}
+	</select>
 	
+	<!-- 장바구니 삭제 -->
+	<delete id="basketDelete" parameterType="Long">
+		DELETE FROM tb_basket WHERE basket_idx = #{basket_idx}
+	</delete>
 </mapper>

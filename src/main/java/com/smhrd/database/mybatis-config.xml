@@ -28,17 +28,13 @@
         <property name="url" value="${url}"/>
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
-        
-        <!-- Connection Pool Settings -->
-                <property name="poolMaximumActiveConnections" value="100"/>
-                <property name="poolMaximumIdleConnections" value="100"/>
-                <property name="poolTimeToWait" value="20000"/>
-                
-                
-        <!-- Ping Query Settings -->
-                <property name="poolPingQuery" value="SELECT 1"/>
-                <property name="poolPingEnabled" value="true"/>
-                <property name="poolPingConnectionsNotUsedFor" value="600000"/>
+        <property name="poolMaximumActiveConnections" value="10"/>
+            <property name="poolMaximumIdleConnections" value="5"/>
+            <property name="poolMaximumCheckoutTime" value="20000"/>
+            <property name="poolTimeToWait" value="20000"/>
+            <property name="poolPingQuery" value="SELECT 1"/>
+            <property name="poolPingEnabled" value="true"/>
+            <property name="poolPingConnectionsNotUsedFor" value="300000"/> <!-- 5분 -->
       </dataSource>
     </environment>
   </environments>

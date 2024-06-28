@@ -1,6 +1,14 @@
+@font-face {
+   font-family: 'GongGothicMedium';
+   src:
+      url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
 body {
   margin-top: 100px;
-  font-family: Arial, sans-serif;
+  font-family: 'GongGothicMedium';
 }
 
 .container {
@@ -66,7 +74,8 @@ body {
 }
 
 .log_size {
-  margin-right: 500px;
+  margin:0;
+  margin-bottom:30px;
   text-align: center;
   font-weight: 500px;
 }

@@ -52,6 +52,60 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ItemTwoOptionSelectService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UserRoomImageService</servlet-name>
+  	<display-name>UserRoomImageService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.UserRoomImageService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ItemRecommendService</servlet-name>
+  	<display-name>ItemRecommendService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ItemRecommendService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateLoginSession</servlet-name>
+  	<display-name>UpdateLoginSession</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.UserSessionUpdateService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ItemRecommendTwoOptionService</servlet-name>
+  	<display-name>ItemRecommendTwoOptionService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ItemRecommendTwoOptionService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ItemOneSelectService</servlet-name>
+  	<display-name>ItemOneSelectService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ItemOneSelectService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BasketSelectService</servlet-name>
+  	<display-name>BasketSelectService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.BasketSelectService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BasketInsertService</servlet-name>
+  	<display-name>BasketInsertService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.BasketInsertService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BasketCntUpdateService</servlet-name>
+  	<display-name>BasketCntUpdateService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.BasketCntUpdateService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BasketDeleteService</servlet-name>
+  	<display-name>BasketDeleteService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.BasketDeleteService</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
   	<url-pattern>/join</url-pattern>
@@ -83,5 +137,41 @@
   <servlet-mapping>
   	<servlet-name>ItemTwoOptionSelectService</servlet-name>
   	<url-pattern>/twoOptionItem</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserRoomImageService</servlet-name>
+  	<url-pattern>/user_room</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ItemRecommendService</servlet-name>
+  	<url-pattern>/itemRecommendService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateLoginSession</servlet-name>
+  	<url-pattern>/updateLoginSession</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ItemRecommendTwoOptionService</servlet-name>
+  	<url-pattern>/recommendTwoOptionService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ItemOneSelectService</servlet-name>
+  	<url-pattern>/itemOne</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BasketSelectService</servlet-name>
+  	<url-pattern>/basketSelect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BasketInsertService</servlet-name>
+  	<url-pattern>/basketinsert</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BasketCntUpdateService</servlet-name>
+  	<url-pattern>/update_basket</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BasketDeleteService</servlet-name>
+  	<url-pattern>/delete_basket</url-pattern>
   </servlet-mapping>
 </web-app>

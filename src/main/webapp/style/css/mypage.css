@@ -1,0 +1,264 @@
+@font-face {
+   font-family: 'GongGothicMedium';
+   src:
+      url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+*{
+   font-family: 'GongGothicMedium';
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+  
+}
+
+
+.user-info {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info h2 {
+    margin: 0;
+}
+
+.user-info button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 50px;
+    border-radius: 20px;
+    background-color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.order-status, .analysis-result, .inquiries {
+    margin-bottom: 20px;
+}
+
+.order-status h2, .analysis-result h2, .inquiries h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.status-warning {
+    background-color: #dae7c9;
+    color: black;
+    padding-top: 15px;
+    padding-bottom:5px;
+    margin-bottom: 10px;
+    text-align:center; 
+}
+
+.status-details {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #aaa4a4;
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-top: 1px solid #aaa4a4;
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.status-label {
+    font-weight: bold;
+}
+
+.status-value {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+}
+
+.status-item a{
+    text-decoration: none;
+    color: black;
+}
+.my-room {
+    margin-bottom: 20px;
+}
+
+.my-room h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.btn-primary{
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 1.42857;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-right:30px;
+}
+.upload {
+    border: 2px soild #ccc;
+/*  padding: 50px; */
+    text-align: center;
+    color: #888;
+    cursor: pointer;
+    height:40px;
+    width: 100px;
+    display:flex;
+   
+}
+
+.result-details {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+}
+
+.inquiry {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.inquiry .date {
+    color: #b4b1b1;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-align: end;
+    font-weight: bold;
+}
+.inquiry1{
+   margin:5px;
+   margin-bottom:30px;
+   margin-top:30px;
+}
+.inquiry1 p{
+    font-weight: bolder;
+    color: #888;
+}
+.inquiry h4 {
+    margin: 15px 0;
+}
+.upload input[type="file"] {
+    display: none;
+}
+.preview-image {
+    width: 400px; /* 미리보기 이미지 크기 설정 */
+    height: 400px;
+    margin: 5px;
+}
+
+
+.analysis-result {
+    margin-bottom: 20px;
+}
+
+.analysis-result h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.result-details {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    /* border-radius: 10px; */
+    border: none;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.result-box {
+    width: 150px;
+    height: 100px;
+    position: relative;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background-color: #ccc;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0); 
+    border-radius: 5px;
+}
+
+.result-box p {
+    text-align: center;
+    margin: 5px 0;
+    font-weight: bold;
+}
+h3{
+    color: rgb(97, 184, 97);
+    margin-bottom:30px;
+   margin-top:0px;
+}
+.container a {
+      text-decoration: none;
+    color: #000;
+}
+
+
+
+.log {
+   
+    margin-top: 20px; /* 기존의 50px에서 20px로 수정 */
+    text-align: right;
+}
+
+.fh5co-heading {
+    width: 100%; /* 1300px에서 100%로 수정 */
+    display: flex;
+    align-items: center; /* 세로 정렬 설정 */
+    margin-top:50px;
+}
+.fh5co-heading h2 {
+    margin: 0; /* 기본 마진 제거 */
+    font-size:40px;
+    
+}
+
+.fh5co-heading .log {
+    margin-left: auto; /* 로그인/회원가입 영역을 오른쪽으로 이동 */
+}
+
+.fh5co-heading .log a {
+    color: #000000; /* 링크 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    margin: 0 10px; /* 각 링크 사이 여백 설정 */
+    font-size:23px;
+}
+.line {
+   margin-top: 30px;
+   border: 1px solid #ccc;
+}
