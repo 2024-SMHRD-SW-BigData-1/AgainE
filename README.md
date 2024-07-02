@@ -55,20 +55,19 @@
         <td>
             <img src="https://img.shields.io/badge/Apache Tomcat-D22128?style=for-the-badge&logo=Apache Tomcat&logoColor=white"/>
             <img src="https://img.shields.io/badge/Flask-0A91C7?style=for-the-badge&logo=Flask&logoColor=white"/>
-            플라스크
         </td>
     </tr>
     <tr>
         <td>데이터베이스</td>
         <td>
-            mysql
+            <img src="https://img.shields.io/badge/MySQL-1370DB?style=for-the-badge&logo=MySQL&logoColor=white"/>
         </td>
     </tr>
     <tr>
         <td>협업도구</td>
         <td>
             <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>
-            notion
+            <img src="https://img.shields.io/badge/Notion-1E2328?style=for-the-badge&logo=Notion&logoColor=white"/>
         </td>
     </tr>
 </table>
