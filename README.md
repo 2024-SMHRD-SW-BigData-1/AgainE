@@ -4,7 +4,7 @@
 ## 👀 서비스 소개
 * 서비스명: ColorSpace
 * 서비스설명: 색상 추출 기반 가구 추천 전자상거래 웹페이지
-![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/ed3ca45d-4ef2-42e4-b6f3-e4eed981eef4)
+![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/e52a949f-e709-4415-b233-af2a9b55f0fa)
 <br>
 
 ## 📅 프로젝트 기간
@@ -84,11 +84,11 @@
 <br>
 
 ## 📌 서비스 흐름도
-![image](https://user-images.githubusercontent.com/25995055/178401048-d6484bda-a2d7-40e1-998b-2bd195cd9f89.png)
+![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/4cc4984a-cdc2-4b38-86d9-2dd97080178f)
 <br>
 
 ## 📌 ER다이어그램
-![image](https://user-images.githubusercontent.com/25995055/169925318-102784c2-893f-4fd7-bec9-a54c44b669d4.png)
+![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/bdbc05c5-0227-4a90-9c0b-1a05b4b53972)
 <br>
 
 ## 🖥 화면 구성
