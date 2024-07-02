@@ -54,6 +54,7 @@
         <td>서버환경</td>
         <td>
             <img src="https://img.shields.io/badge/Apache Tomcat-D22128?style=for-the-badge&logo=Apache Tomcat&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Flask-0A91C7?style=for-the-badge&logo=Flask&logoColor=white"/>
             플라스크
         </td>
     </tr>
