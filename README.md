@@ -1,5 +1,4 @@
 # 📎 ColorSpace(팀명: 또에러났조)
-![image](https://user-images.githubusercontent.com/25995055/178401309-2a2ffc86-ef45-439b-bfd8-6978312100bc.png)
 
 
 ## 👀 서비스 소개
