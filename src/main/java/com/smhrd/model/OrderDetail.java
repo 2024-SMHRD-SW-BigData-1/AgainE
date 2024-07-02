@@ -14,13 +14,17 @@ public class OrderDetail {
     private long item_idx;
 
     // 주문 수량 
-    private Integer order_cnt;
+    private long order_cnt;
+    
+    // 아이템 총 가격(아이템 1개 가격 * 주문 수량)
+    private long total_item;
 
-	public OrderDetail(long order_idx, long item_idx, Integer order_cnt) {
+	public OrderDetail(long order_idx, long item_idx, long order_cnt, long total_item) {
 
 		this.order_idx = order_idx;
 		this.item_idx = item_idx;
 		this.order_cnt = order_cnt;
+		this.total_item = total_item;
 	}
 
 	public OrderDetail() {
@@ -51,14 +55,23 @@ public class OrderDetail {
 		this.item_idx = item_idx;
 	}
 
-	public Integer getOrder_cnt() {
+	public long getOrder_cnt() {
 		return order_cnt;
 	}
 
-	public void setOrder_cnt(Integer order_cnt) {
+	public void setOrder_cnt(long order_cnt) {
 		this.order_cnt = order_cnt;
 	}
 
+	public long getTotal_item() {
+		return total_item;
+	}
+
+	public void setTotal_item(long total_item) {
+		this.total_item = total_item;
+	}
+
+	
 	
 	
 	

@@ -6,10 +6,14 @@
 
 
 
-<mapper namespace="BoardMapper">
+<mapper namespace="ReplyMapper">
 	
 	
 	<!-- sql문 작성  -->
+	
+	<insert id="replyInsert" parameterType="Reply">
+		INSERT INTO tb_reply VALUES (null, #{b_idx}, #{rep_title}, #{rep_content}, #{rep_file}, #{replied_at}, #{admin_id})
+	</insert>
 	
 	
 </mapper>

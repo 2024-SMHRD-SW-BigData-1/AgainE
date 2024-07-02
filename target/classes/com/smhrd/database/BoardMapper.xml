@@ -11,5 +11,59 @@
 	
 	<!-- sql문 작성  -->
 	
+	<!-- 문의글 불러오기 -->
+	<select id="boardDetail" parameterType="String" resultType="HashMap">            
+     	SELECT 
+     		tb_board.b_idx,
+            tb_board.b_title,
+            tb_board.b_content,
+            tb_board.b_file,
+            tb_board.created_at,
+            tb_board.b_status,
+            tb_board.b_category,
+            tb_reply.rep_title,
+            tb_reply.rep_content, 
+            tb_reply.rep_file,
+            tb_reply.replied_at                   
+        FROM 
+            tb_board
+            LEFT JOIN tb_reply ON tb_board.b_idx = tb_reply.b_idx
+        WHERE 
+            tb_board.user_id=#{user_id}
+    </select>
+    
+    
+    <!-- 문의글 작성 -->
+	<insert id="boardInsert" parameterType="Board">
+		insert into tb_board values(null, #{b_title}, #{b_content}, #{b_file}, #{created_at}, #{user_id} ,#{b_status}, #{b_category} )
+	</insert>
+
+	<!-- 문의글 전체선택 -->
+	<select id="boardSelectAll" resultType="Board">
+		select * from board
+	</select>
+	
+	<!-- 문의글 보기 -->
+	<select id="boardView" parameterType="int" resultType="Board">
+		select * from board where user_id=#{user_id}
+	</select>
+	
+	<!-- 카테고리에 해당하는 문의글 전부 가져오기 -->
+	<select id="boardCategorySelect" parameterType="String" resultType="Board">
+		select * from tb_board where b_category = #{b_category}
+	</select>
+	
+	
+	<!-- 문의글 인덱스에 해당하는 문의글 가져오기 -->
+	<select id="boardIndexSelect" parameterType="long" resultType="Board">
+		select * from tb_board where b_idx = #{b_idx}
+	</select>
+	
+	
+	<!-- 문의글 인덱스에 해당하는 문의글 타입 변경 -->
+	<update id="boardStatusUpdate" parameterType="long">
+		update tb_board set b_status = 't' where b_idx =  #{b_idx}
+	</update>
+	
 	
 </mapper>

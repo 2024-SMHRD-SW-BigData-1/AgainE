@@ -1,7 +1,7 @@
  $(document).ready(function() {
 	
 	var loginUserJson = $('#uploadForm').data('login-user-json');
-    console.log(loginUserJson); // JSON 문자열 출력
+    //console.log(loginUserJson); // JSON 문자열 출력
 
 	$('#upload-area').click(function() {
                 $('#file-input').click();
@@ -30,6 +30,7 @@
             
 	// 플라스크 ajax
     $('#uploadForm').submit(function(event) {
+		
         event.preventDefault(); // 폼 제출 기본 동작 방지
         var formData = new FormData($(this)[0]);
         formData.append("loginUserJson", JSON.stringify(loginUserJson));
@@ -40,6 +41,7 @@
             return; // 파일이 선택되지 않은 경우에는 여기서 종료
         }
         
+			$('#loading-spinner').show(); // 로딩 스피너 표시
         $.ajax({
             url: 'http://192.168.219.200:5058/flaskServer',
             type: 'POST',
@@ -51,12 +53,14 @@
                 },
             success: function(response) {
 				let user = response.user;
-                console.log('업로드 성공:', response);
-                console.log('파일명:', user.user_room_url);
+                //console.log('업로드 성공:', response);
+                //console.log('파일명:', user.user_room_url);
                
                 updateLoginSession(user);
                 displayFurniture(user);
                 
+                $('#loading-spinner').hide(); // 작업이 끝난 후 로딩 스피너 숨기기
+				 
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 if (jqXHR.status === 400) {
@@ -65,9 +69,11 @@
 		                console.log('Error:', errorResponse.error);
 		                // 에러 메시지를 사용자에게 보여주기
 		                alert('Error: ' + errorResponse.error);
+		                $('#loading-spinner').hide(); // 작업이 끝난 후 로딩 스피너 숨기기
 		            }
 		        } else {
 		            console.log('Unexpected error:', textStatus, errorThrown);
+		            $('#loading-spinner').hide(); // 작업이 끝난 후 로딩 스피너 숨기기
 		        }
             }
         });
@@ -81,15 +87,18 @@
 	// 가구 이미지를 화면에 표시하는 함수
 	function displayFurniture(user) {
 		var containers = $('.result-details'); // 모든 요소를 선택
-			console.log(user)
+			//console.log(user)
 			
-			var container = containers.eq(0); // 컨테이너 설정
+			var container1 = containers.eq(0); // 컨테이너 설정
+			$('#user-type-f').css('display', 'block');
+			var container2 = containers.eq(1); // 컨테이너 설정
 			var user_img = user.user_room_url; // 사용자 방 이미지 파일 이름
-			console.log(user_img)
+			//console.log(user_img)
 			var user_color = user.user_room_color; // 컬러
 			var user_tone = user.user_room_tone; // 톤
 
-			container.empty();
+			container1.empty();
+			container2.empty();
 	
 
 			// 태그 생성
@@ -108,7 +117,8 @@
 			resultElement.append(imageElement);
 			resultElement.append(colorElement);
 			resultElement.append(toneElement);
-			container.append(resultElement);
+			container1.append(resultElement);
+			container2.append(resultElement);
 	}
 
 
@@ -120,7 +130,7 @@
                     contentType: 'application/json',
                     data: JSON.stringify(user),
                     success: function(response) {
-                        console.log('세션 업데이트 성공:', response);
+                        //console.log('세션 업데이트 성공:', response);
                     },
                     error: function(xhr, status, error) {
                         console.log('세션 업데이트 실패:', error);

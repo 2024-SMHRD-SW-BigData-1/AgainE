@@ -33,7 +33,9 @@
 		SELECT * FROM tb_item WHERE item_color = #{color}
 	</select>
 	
-	<select id="oneItem" parameterType="String" resultType="Item">
+	
+	<!-- 가구 하나만 조회  -->
+	<select id="oneItem" parameterType="int" resultType="Item">
 		SELECT * FROM tb_item WHERE item_idx = #{item_idx}
 	</select>
 	
@@ -70,5 +72,27 @@
 		SELECT * FROM tb_item WHERE item_category = #{category} and item_tone = #{tone}
 	</select>
 	
+	<!-- 관리자 새 가구 insert -->
+	<insert id="insertAdminItems" parameterType="Item">
+		INSERT INTO tb_item VALUES (null, #{item_name}, #{item_tone}, #{item_color},
+		#{item_info}, #{item_category}, #{item_price}, #{item_url})
+	</insert>
+	
+	<!-- 관리자 가구 업데이트 -->
+	<update id="updateItem" parameterType="Map">
+		UPDATE 
+			tb_item
+		SET 
+			item_idx = #{item_idx},
+			item_name = #{item_name},
+			item_tone = #{item_tone},
+			item_color = #{item_color},
+			item_info = #{item_info},
+			item_category = #{item_category},
+			item_price = #{item_price},
+			item_url = #{item_url}
+		WHERE 
+			item_idx = #{item_idx}
+	</update>
 	
 </mapper>

@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+@font-face {
+   font-family: 'GongGothicMedium';
+   src:
+      url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@media screen and (max-width: 768px) {
+   #fh5co-main {
+      width: 100%;
+   }
+}
+
+body{
+
+   background-color:  #DCDCDC ;
+    font-family: 'GongGothicMedium';
+    margin: 0;
+    padding: 40px;
+
+
+
+}
+#fh5co-main h2{
+   margin: 30px 50px 0 90px;
+   font-size:60px;
+   font-weight: bold;
+
+}
+#fh5co-main .fh5co-narrow-content {
+   position: relative;
+   width: 70%;
+   margin: 0 auto;
+   padding: 2em 0;
+}
+@media screen and (max-width: 768px) {
+   #fh5co-main .fh5co-narrow-content {
+      width: 100%;
+      padding: 3.5em 1em;
+   }
+}
+body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
+   top: 0;
+   -moz-transform: translateX(270px);
+   -webkit-transform: translateX(270px);
+   -ms-transform: translateX(270px);
+   -o-transform: translateX(270px);
+   transform: translateX(270px);
+}
+
+.con_list span{
+    /* margin: 5px; */
+color: black;
+font-weight: bold;
+}
+.con_list h4{
+    margin: 5px;
+  text-align: right;
+
+}
+.log {
+   margin-top:10px;
+   /* margin-right:250px; */
+   text-align: right;
+   
+}
+.log a {
+   color: #000000; /* 링크 색상 */
+   text-decoration: none; /* 밑줄 제거 */
+   margin: 0 10px; /* 각 링크 사이 여백 설정 */
+   font-size:20px;
+}
+.fh5co-heading h2 {
+    margin: 0; /* 기본 마진 제거 */
+    font-size:40px;
+    
+}
+
+.fh5co-heading .log {
+    margin-left: auto; /* 로그인/회원가입 영역을 오른쪽으로 이동 */
+    
+}
+
+.fh5co-heading .log a {
+    color: #000000; /* 링크 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    margin: 0 10px; /* 각 링크 사이 여백 설정 */
+    font-size:23px;
+}
+.line {
+   margin-top: 30px;
+   border: 1px solid #ccc;
+   margin-left:200px;
+   margin-right:200px;
+   
+}
+.que p{
+    color: rgb(97, 182, 97);
+    font-weight: bold;
+}
+.que_f{
+display: flex;
+max-width: 100%; /* 최대 너비 설정 */
+}
+.que img{
+    padding: 10px 20px;
+ max-width:300px;
+    height: 300px;
+
+ margin-top: 10px;
+ border-radius: 5px;
+ margin: auto;
+ text-align: center;
+}
+.que_w{
+    border: 1px solid rgb(129, 128, 128);
+    width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* 최대 너비 설정 */
+}
+.que_w p{
+    color: black;
+    margin: 30px;
+}
+.que_w h4{
+    margin: 30px;
+    box-sizing: border-box;
+}
+/* .que_q span{
+    text-align: end;
+ display: flex;
+ justify-content: end;
+ margin-left:30px;
+ margin: 0;
+
+} */
+.que_q {
+    /* display: flex; */
+    justify-content: flex-end;
+    justify-content:right;
+    text-align: end;
+    overflow-wrap: break-word; /* 긴 단어를 줄바꿈 */
+    word-wrap: break-word; /* IE 호환성을 위한 속성 */
+    word-break: break-word; /* 단어 단위로 줄바꿈 */
+}
+
+.que_q span {
+    margin-right: 10px; /* 필요에 따라 조정 가능 */
+
+}
+.que_f h4{
+    max-width: 800px;
+}
+
+
+#customFileUploadButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+border: 1px solid black;
+}
+
+#customFileUploadButton:hover {
+    background-color: #e7f6e8;
+}
+
+/* 선택된 파일명을 표시할 영역의 스타일 */
+#fileNameDisplay {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.que_sub button{
+    background-color: #BCBCBC;
+    border: none;
+    color: white;
+    padding: 10px;
+  font-weight: bold;
+  padding: 10px;
+}
+.que_sub {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* 수직 중앙 정렬 */
+    margin-top: 50px;
+   
+}
+

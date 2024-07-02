@@ -1,0 +1,145 @@
+@font-face {
+   font-family: 'GongGothicMedium';
+   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+body {
+  margin-top: 100px;
+  font-family: 'GongGothicMedium';
+}
+
+.container {
+  margin-top: 100px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+a {
+  display: block;
+  text-align: center;
+  color: black;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.container h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+span {
+  font-size: 30px;
+}
+
+h4 {
+  text-align: right;
+}
+
+.user_id {
+  font-size: 30px;
+  margin-left: 30px;
+  background-color: rgb(221, 218, 213);
+  padding: 5px;
+  color: blue;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  height: 40px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.form-group button {
+  font-weight: 500px;
+  font-size: 20px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  background-color: #aca9a9;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-group button:hover {
+  background-color: #4b4c4d;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  padding-right: 30px;
+}
+
+.login-link a {
+  margin-left: 25px;
+  color: #000000;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.log_size {
+  text-align: center;
+  font-weight: 800px;
+}
+
+.id_over button {
+  margin-left: 340px;
+  background-color: rgb(228, 224, 224);
+  font-size: small;
+  margin-top: 10px;
+  width: 100px;
+  text-align: center;
+  color: #000000;
+  border-radius: 20px;
+}
+
+.find {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%; 
+  text-align: center;
+  gap: 50px; 
+}
+
+.find a {
+  color: #000000; 
+  text-decoration: none; 
+}
+
+.container h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 30px; 
+}
+h3{
+   margin-top:20px;
+   margin-bottom:50px;
+   
+}
+.f{
+ margin-top:30px;
+
+   text-align: right;
+}

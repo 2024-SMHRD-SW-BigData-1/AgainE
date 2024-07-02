@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+@font-face {
+   font-family: 'GongGothicMedium';
+   src:
+      url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+body{
+
+   background-color:  #DCDCDC ;
+    font-family: 'GongGothicMedium';
+    margin: 0;
+    padding: 40px;
+
+
+
+}
+.line {
+   margin-top: 30px;
+   border: 1px solid #ccc;
+}
+.main{
+ text-align: center;
+ margin: 0;
+
+}
+.main h3{
+   
+    margin-top: 100px;
+    font-size: 35px;
+   color: rgb(130, 132, 132);
+}
+.main a:hover{
+    color: black;
+    /* font-size: 45px; */
+    text-decoration: none; 
+}
+
+.main h3:hover{
+    color: black;
+  font-size: 45px;
+    text-decoration: none; 
+}
+
+/* 제품 수정 */
+.fh5co-heading {
+   /* background-color: #E4F0D5; */
+   /*    font-size: 45px; */
+   /* margin-bottom: 1em; */
+   /* width: 1300px; */
+   display: flex;
+   align-items: center; /* 세로 정렬 설정 */
+}
+
+#fh5co-main h2{
+   margin: 50px 50px 0 250px;
+   font-size:60px;
+   font-weight: bold;
+
+}
+
+.container {
+ 
+    margin: 0 auto;
+    background-color: #DCDCDC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: none;
+   white-space: nowrap;
+ 
+}
+
+h1 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #dfdcdc;
+    line-height: 1.5; /* 줄 간격을 1.5로 설정 */
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+th, td {
+    text-align: left;
+    font-size: 18px;
+}
+
+th {
+    background-color: #a9a7a7;
+}
+
+td {
+    background-color: white;
+}
+
+button {
+    background-color: #a9a7a7;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 80px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 15px;
+}
+
+button:hover {
+    background-color: #a9a7a7;
+}
+
+.add-btn {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px; /* 버튼 위쪽에 간격 추가 */
+}
+
+.add-btn-container {
+ padding-left: 10px;
+ padding-right: 10px;
+    /* margin-left: 1000px; */
+    text-align: right; /* 버튼을 왼쪽 정렬 */
+}
+
+
+/*수정 */
+.sw-btn {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px; /* 버튼 위쪽에 간격 추가 */
+   text-align: center;
+}
+.sw-btn-container {
+    padding-left: 10px;
+    padding-right: 10px;
+       /* margin-left: 1000px; */
+       text-align: center; /* 버튼을 왼쪽 정렬 */
+   }
+.tr_c{
+    text-align: center;
+   }
+.custom-select{
+    width: 190px;
+    height: 35px;
+}
+.t_con{
+
+
+    width: 600px;
+    margin: 0 auto;
+    background-color: #DCDCDC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: none;
+   margin-top:30px;
+}
+.t_con th{
+    text-align: center;
+}
+.t_con td{
+    /* font-weight: bold; */
+    text-align: center;
+}
+.custom-select{
+    text-align: center;
+    font-size: smaller;
+}
+input{
+    width: 190px;
+
+}
+.f input{
+   width:230px;
+}
+::-webkit-file-upload-button{
+    background-color: white;
+    border: 1px solid #dfdcdc;
+    margin-right:15px;
+}
+.line{
+  /*   margin-bottom: 80px; */
+margin-right:250px;
+    margin-left:250px;
+    margin-top:50px;
+    
+}
+.log {
+   margin-bottom: 30px;
+   margin-right:250px;
+   text-align: right;
+   
+}
+
+.log a {
+   color: #000000; /* 링크 색상 */
+   text-decoration: none; /* 밑줄 제거 */
+   margin: 0 10px; /* 각 링크 사이 여백 설정 */
+   font-size:20px;
+}
+
+.ex{
+    width: 190px;
+    font-size: smaller;
+    font-weight: 100;
+}
+.con_list span{
+    /* margin: 5px; */
+color: black;
+font-weight: bold;
+}
+.con_list h4{
+    margin: 5px;
+  text-align: right;
+
+}
+.cs{
+ padding-left: 30px;
+}
+.sb-btn-container{
+    padding-left: 10px;
+    padding-right: 10px;
+       margin-top: 0px;
+       text-align: right; /* 버튼을 왼쪽 정렬 */
+}
+.sb-btn-container input{
+    background-color:#a9a7a7 ;
+    color: white;
+     font-size:20px;
+    border: none;
+    border-radius: 5px;
+    padding:10px;
+}
+/* span{
+   font-family:"Roboto", Arial, sans-serif;
+} */
+.con_list{
+       margin: 0 auto;
+    background-color: #DCDCDC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: none;
+   white-space: nowrap;
+   width: 1170px;
+}
+
+.user{
+   font-family:"Roboto", Arial, sans-serif;
+   font-weight: 100 !important;
+   color:white !important;
+   display: inline;
+}

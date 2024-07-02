@@ -6,10 +6,89 @@
 
 
 
-<mapper namespace="BoardMapper">
+<mapper namespace="OrderDetailMapper">
 	
 	
 	<!-- sql문 작성  -->
 	
+	<!-- 결제 시 주문상세 넣기 -->
+	<insert id="insertOrderDetail" parameterType="OrderDetail">
+		INSERT INTO tb_order_detail VALUES (null, #{order_idx}, #{item_idx}, #{order_cnt}, #{total_item})
+	</insert>
+	
+	
+	<!-- 주문처리상태에 따른 주문상세내역의 개수 가져오기 -->
+	<select id="orderDetailCount" parameterType="String" resultType="HashMap">
+        SELECT
+            o.order_state as orderState,
+            COUNT(od.od_idx) as detailCount
+        FROM
+            tb_order o
+        JOIN
+            tb_order_detail od ON o.order_idx = od.order_idx
+        JOIN
+            tb_user u ON o.user_id = u.user_id
+        WHERE
+            u.user_id = #{user_id}
+        GROUP BY
+            o.order_state
+    </select>
+    
+    
+    <!-- 주문 상세 내역 가져오기 -->
+    <select id="orderDetail" parameterType="String" resultType="HashMap">
+	 	SELECT 
+            o.order_idx,
+            o.total_order,
+            o.pay_method,
+            o.user_id,
+            o.ordered_at,
+            o.order_state,
+            od.od_idx,
+            od.item_idx,
+            od.order_cnt,
+            od.total_item,
+            i.item_name,
+            i.item_url,
+            i.item_price                    
+        FROM 
+            tb_order_detail od 
+            JOIN tb_item i ON od.item_idx = i.item_idx 
+            JOIN tb_order o ON od.order_idx = o.order_idx 
+        WHERE 
+            o.user_id=#{user_id}
+    </select>
+    
+    
+    <!-- 관리자 주문 상세 내역 가져오기 -->
+	<select id="adminOrderDetail" parameterType="int" resultType="HashMap">
+		SELECT 
+           o.order_idx, 
+           o.user_id, 
+           u.user_addr, 
+           o.ordered_at, 
+           od.item_idx, 
+           i.item_name, 
+           od.order_cnt, 
+           od.total_item, 
+           o.total_order,
+           o.order_state
+        FROM tb_order o
+           LEFT JOIN tb_order_detail od ON o.order_idx = od.order_idx
+           LEFT JOIN tb_item i ON od.item_idx = i.item_idx
+           LEFT JOIN tb_user u ON o.user_id = u.user_id
+        WHERE 
+           o.order_idx = #{orderIdx}
+    </select>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	
 </mapper>

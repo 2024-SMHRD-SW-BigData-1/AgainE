@@ -45,6 +45,7 @@ public class BasketDAO {
 				session.rollback();
 			}
 		} catch (Exception e) {
+			session.rollback();
 			System.out.println("장바구니 추가 실패");
 			e.printStackTrace();
 		} finally {
@@ -66,6 +67,7 @@ public class BasketDAO {
 				session.rollback();
 			}
 		} catch (Exception e) {
+			session.rollback();
 			System.out.println("장바구니 수량 업데이트 실패1");
 			e.printStackTrace();
 		} finally {
@@ -97,7 +99,7 @@ public class BasketDAO {
 	}
 
 	
-	// 장바구니 삭제
+	// 장바구니 삭제버튼 눌렀을 때 삭제
 	public int basketDelete(Long basket_idx) {
 		SqlSession session = factory.openSession();
 		int cnt = 0;
@@ -109,6 +111,7 @@ public class BasketDAO {
 				session.rollback();
 			}
 		} catch (Exception e) {
+			session.rollback();
 			System.out.println("장바구니 삭제 실패");
 			e.printStackTrace();
 		} finally {
@@ -118,4 +121,29 @@ public class BasketDAO {
 		return cnt;
 	}
 
+	// 결제 후 장바구니 전체 삭제
+	public int afterPayBasketDelete(String user_id) {
+		SqlSession session = factory.openSession();
+		int cnt = 0;
+		try {
+			cnt = session.delete("BasketMapper.afterPayBasketDelete",user_id);
+			if(cnt > 0) {
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			session.rollback();
+			System.out.println("장바구니 삭제 실패");
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return cnt;
+	}
+	
+	
+	
+	
 }

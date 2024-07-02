@@ -17,9 +17,9 @@ $(document).ready(function() {
             quantityInput.val(newQuantity);
 
             // UI를 즉각적으로 업데이트
-            var currentPrice = parseInt(cartItem.find('.price').text().replace('원', ''));
+            var currentPrice = parseInt(cartItem.find('.price').text().replace(/[원,]/g, ''));
             var unitPrice = currentPrice / currentQuantity;
-            cartItem.find('.price').text(unitPrice * newQuantity + '원');
+            cartItem.find('.price').text((unitPrice * newQuantity).toLocaleString() + '원');
             updateTotalPrice();
 
             // 기존 요청이 있으면 취소
@@ -45,7 +45,7 @@ $(document).ready(function() {
                 },
                 success: function(response) {
                     // 서버 응답으로 가격을 재확인
-                    cartItem.find('.price').text(response.total_item + '원');
+                    cartItem.find('.price').text(response.total_item.toLocaleString() + '원');
                     updateTotalPrice();
                 },
                 error: function(error) {
@@ -97,10 +97,10 @@ $(document).ready(function() {
         function updateTotalPrice() {
             var totalPrice = 0;
             $('.cart-item .price').each(function() {
-                var itemPrice = parseInt($(this).text().replace('원', ''));
+                var itemPrice = parseInt($(this).text().replace(/[원,]/g, ''));
                 totalPrice += itemPrice;
             });
-            $('#total-price').text(totalPrice + '원');
+            $('#total-price').text(totalPrice.toLocaleString() + '원');
         }
 
 
@@ -144,21 +144,24 @@ function initialBasket() {
                                                 <h3>${item.item_name}</h3>
                                                 <p>컬러 : ${item.item_color}</p>
                                                 <p>톤 : ${item.item_tone}</p>
-                                                <h5>개수</h5>
+                                                
+                                                <p class="price">${basket.total_item.toLocaleString()}원</p>
                                                 <div class="quantity-control">
+                                                <p>개수 :
                                                     <button class="minus">-</button>
                                                     <input type="number" class="quantity" name="quantity" min="1" value="${basket.cnt}" readonly>
                                                     <button class="plus">+</button>
                                                     <button id="deleteBasket">삭제</button>
+                                                     </p>
                                                 </div>
-                                                <p class="price">${basket.total_item}원</p>
                                             </div>
                                         </div>
+                                         <div class="line"></div> <br>
                                     `;
                                     // 각 basket에 대응하는 정보를 포함한 HTML 요소를 cartItems에 추가합니다.
                                     cartItems.append(cartItemHtml);
                                     totalPrice += parseInt(basket.total_item);
-                                    $('#total-price').text(totalPrice + '원');
+                                    $('#total-price').text(totalPrice.toLocaleString() + '원');
                                 },
                                 error: function(error) {
                                     console.error('Error fetching additional data:', error);

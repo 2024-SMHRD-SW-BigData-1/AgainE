@@ -87,3 +87,29 @@ h2 {
 .shop_N h2 {
    font-weight: 200;
 }
+#cart-items{
+	margin: 0;
+}
+.quantity-control{
+	border: 1px inherit;
+	width: 300px;
+	margin:0;
+	margin-bottom:30px;
+}
+.quantity-control p{
+	margin:5px;
+}
+.checkout button{
+border: none;
+padding:10px;
+background-color: #aca9a9;
+}
+p{
+	margin:0;
+}
+.price{
+	color:black;
+}
+#total-price{
+	color:black;
+}
