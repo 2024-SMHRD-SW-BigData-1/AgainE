@@ -76,11 +76,11 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조) 예시 
-![서비스 아키텍처](https://user-images.githubusercontent.com/25995055/169925538-15867bd9-aa0b-42fc-a39b-88981e926e51.png)
+![또에러났조-시스템아키텍처-001](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/814a22bd-158e-417a-8586-ef09bf5caf33)
 <br>
 
 ## 📌 SW유스케이스
-![image](https://user-images.githubusercontent.com/25995055/178401023-9a015e66-aa6e-4d74-8564-9b1f9d306649.png)
+![Uploading 유스케이스다이어그램리얼찐찐막.png…]()
 <br>
 
 ## 📌 서비스 흐름도
