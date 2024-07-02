@@ -38,7 +38,8 @@
     <tr>
         <td>라이브러리</td>
         <td>
-            
+            CNN
+            K-Means
         </td>
     </tr>
     <tr>
