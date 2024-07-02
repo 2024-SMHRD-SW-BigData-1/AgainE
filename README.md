@@ -38,8 +38,8 @@
     <tr>
         <td>라이브러리</td>
         <td>
-            CNN
-            K-Means
+            Mask R-CNN
+            K-Means Clustering
         </td>
     </tr>
     <tr>
@@ -47,7 +47,7 @@
         <td>
             <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white"/>
             <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=white"/>
-            주피터 노트북
+            주피터
         </td>
     </tr>
     <tr>
@@ -75,7 +75,7 @@
 
 <br>
 
-## ⚙ 시스템 아키텍처(구조) 예시 
+## ⚙ 시스템 아키텍처(구조)
 ![또에러났조-시스템아키텍처-001](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/814a22bd-158e-417a-8586-ef09bf5caf33)
 <br>
 
