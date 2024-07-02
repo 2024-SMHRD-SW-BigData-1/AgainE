@@ -80,7 +80,7 @@
 <br>
 
 ## 📌 SW유스케이스
-![Uploading 유스케이스다이어그램리얼찐찐막.png…]()
+![유스케이스다이어그램리얼찐찐막](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/04e33398-8282-4d91-9dd1-1e87254acb2d)
 <br>
 
 ## 📌 서비스 흐름도
