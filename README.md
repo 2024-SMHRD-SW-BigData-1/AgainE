@@ -129,11 +129,11 @@
     <td align="center"><b>Deep Learning</b></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/Hsejin" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/xm4hy" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/Yun-Min-Young" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/woolee0822" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/ss2ul" target='_blank'>github</a></td>
   </tr>
 </table>
 
