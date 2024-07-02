@@ -6,10 +6,35 @@
 
 
 
-<mapper namespace="BoardMapper">
+<mapper namespace="OrderMapper">
 	
 	
 	<!-- sql문 작성  -->
+	
+	<!-- 결제 시 주문 넣기 -->
+	<insert id="insertOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="order_idx">
+		INSERT INTO tb_order VALUES (null, #{total_amount}, #{pay_method}, #{user_id}, #{ordered_at}, #{order_state})
+	</insert>
+	
+	<!-- 결제 시 삽입된 주문의 인덱스 번호 가져오기 -->
+    <select id="selectOrderById" parameterType="long" resultType="Order">
+        SELECT * FROM tb_order WHERE order_idx = #{order_idx}
+    </select>
+	
+	
+	<!-- 관리자 전체 주문 내역 -->
+	<select id="adminOrder" parameterType="String" resultType="HashMap">
+		SELECT *
+		FROM tb_order
+	</select>
+	
+	
+	 <!-- 주문 상태 업데이트 -->
+    <update id="updateOrderState" parameterType="map">
+        UPDATE tb_order
+        SET order_state = #{order_state}
+        WHERE order_idx = #{order_idx}
+    </update>
 	
 	
 </mapper>

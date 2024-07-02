@@ -28,8 +28,13 @@
 		SELECT * FROM tb_basket WHERE basket_idx = #{basket_idx}
 	</select>
 	
-	<!-- 장바구니 삭제 -->
+	<!-- 장바구니 삭제버튼 클릭 시 삭제 -->
 	<delete id="basketDelete" parameterType="Long">
 		DELETE FROM tb_basket WHERE basket_idx = #{basket_idx}
+	</delete>
+	
+	<!-- 결제 후 장바구니 전체 삭제 -->
+	<delete id="afterPayBasketDelete" parameterType="String">
+		DELETE FROM tb_basket WHERE user_id = #{user_id}
 	</delete>
 </mapper>

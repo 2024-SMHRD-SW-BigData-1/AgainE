@@ -62,6 +62,25 @@ if (user == null) {
          }
       }
        
+                /* 로딩 스피너 스타일 */
+ .spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* 다른 요소 위에 표시되도록 */
+}
+
+.spinner-overlay img {
+    max-width: 100px; /* 이미지의 최대 너비 */
+    max-height: 100px; /* 이미지의 최대 높이 */
+    object-fit: contain; /* 이미지 비율을 유지하며 맞추기 */
+}
        
        /* 숫자 입력의 기본 화살표 숨기기 */
 		input[type="number"]::-webkit-outer-spin-button,
@@ -96,17 +115,15 @@ if (user == null) {
          }
          #exist-cart {
          	display: none;
+		}
+         	
          }
          
-         /* 로딩 스피너 스타일 */
-        #loading-spinner {
-            display: none;
-            text-align: center;
-        }
+
    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../js/delete_cookie.js"></script>
     <script src="../js/basket.js"></script>
-    
     
 </head>
 
@@ -120,12 +137,14 @@ if (user == null) {
         <h2 style="display: inline-block; margin-right: 20px;">
             <a href="index.jsp" style="text-decoration: none; color: #000000; font-size:50px; font-weight: 200;">ColorSpace</a>
         </h2>
+        
+        
         <% if (user != null) { %>
             <!-- 로그인 했을 시 -->
             <% if (user.getUser_type().equals("f") || user.getUser_type().equals("t")) { %>
                 <!-- 사용자일때 -->
                 <div class="log">
-                    <i class="fa fa-love"></i><a href="../logout">로그아웃</a> <a>|</a> <i class="fa fa-love"><a href="mypage.jsp">mypage</a></i> <a>|</a> <i class="fa fa-love"></i><a href="user_board.jsp">문의하기</a>
+                    <i class="fa fa-love"></i><a href="../logout">로그아웃</a> <a>|</a> <i class="fa fa-love"><a href="../MypageService">mypage</a></i> <a>|</a> <i class="fa fa-love"></i><a href="user_board.jsp">문의하기</a>
                 </div>
                 <div class="line"></div>
             <% } %>
@@ -142,9 +161,10 @@ if (user == null) {
 
             <span><h2>장바구니</h2></span>
             
-            		<div id="loading-spinner">
-        			<img src="../images/Loading_icon.gif" alt="로딩 중...">
-    				</div>
+            		<div id="loading-spinner" class="spinner-overlay" style="display: none;">
+			   			<img src="../images/Loading_icon.gif" alt="로딩 중...">
+					</div>
+            		
 
 					<!--  장바구니 비었을 때  -->
 					<div id="empty-cart">
@@ -164,6 +184,8 @@ if (user == null) {
 							<!-- 아이템 동적으로 추가되는 부분 -->
 						</main>
 						
+						
+						
 						<div id="exist-cart">
 							<div class="total-price">
 							<p>총 금액</p>
@@ -171,7 +193,7 @@ if (user == null) {
 							</div>
 							
 							<div class="checkout">
-							<a href=""><button>구매하기</button> </a>	
+							<a href="pay.jsp"><button>구매하기</button></a>
 							</div>
 					       <div class="ma-a"> 
 					       <a  href="index.jsp">쇼핑하러 가기</a> 

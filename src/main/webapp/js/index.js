@@ -7,6 +7,8 @@ $(document).ready(function() {
 	const url = new URL(window.location.href);
 	const urlParams = url.searchParams;
 	const join_success = urlParams.get('join_success');
+	const deleteBasket = urlParams.get('deleteBasket');
+	const access = urlParams.get('access');
 	let isSelectedCategory = false;
 	let isSelectedColor = false;
 	let isSelectedRecommend = false;
@@ -22,9 +24,34 @@ $(document).ready(function() {
 		});
 	}
 	
+	if (deleteBasket == "false") {
+		swal.fire({
+			title: "장바구니 비우기 실패",
+			html: "장바구니 목록을 비우는 데에 실패했습니다.",
+			icon: "warning" //"info,success,warning,error" 중 택1
+		});
+	}
+	
+	if (access == "false") {
+		swal.fire({
+			title: "접근 제한",
+			html: "잘못된 접근입니다.",
+			icon: "error" //"info,success,warning,error" 중 택1
+		});
+	}
 	
 	// 장바구니 클릭 시
 	$('#move-to-cart-btn').click(function() {
+		if (!isLoggedIn) {
+            Swal.fire({
+                title: '로그인이 필요합니다.',
+                text: '로그인 페이지로 이동합니다.',
+                icon: 'warning'
+            }).then(() => {
+                window.location.href = '../html/login.jsp';
+            });
+            return; // 로그인하지 않은 경우 함수 실행 중단
+        }
 		window.location.href = 'basket.jsp'; // 장바구니 페이지 이동
 	});
 
@@ -36,13 +63,13 @@ $(document).ready(function() {
 			selectedCategory = currentId;
 			isSelectedCategory =  true;
 			$(this).find('img').attr('src', `../images/${selectedCategory}1.png`);
-			console.log(`../images/${selectedCategory}1.png`)
+			//console.log(`../images/${selectedCategory}1.png`)
 		
 		}else if(isSelectedCategory && selectedCategory === currentId){
 			$(this).find('img').attr('src', `../images/${selectedCategory}.png`)
 			selectedCategory = '';
 			isSelectedCategory = false;
-			console.log(`../images/${selectedCategory}.png`)
+			//console.log(`../images/${selectedCategory}.png`)
 		
 		}else if(isSelectedCategory && selectedCategory !== currentId){
 			$(`#${selectedCategory}`).find('img').attr('src', `../images/${selectedCategory}.png`)
@@ -143,8 +170,8 @@ $(document).ready(function() {
 			$(this).addClass('active222');
 		}
 
-		console.log(isSelectedRecommend);
-		console.log(selectedRecommend);
+		//console.log(isSelectedRecommend);
+		//console.log(selectedRecommend);
 		handleServiceCall(true);
 		
 	});
@@ -201,14 +228,14 @@ $(document).ready(function() {
 	// 팝업 띄우기
 	$(document).on('click', '.showPopup', function() {
 		var currentId = $(this).attr('id');
-		console.log("클릭된 가구의 id : ",currentId);
+		//console.log("클릭된 가구의 id : ",currentId);
 		
 		$.ajax({
 			type: 'GET',
 			url: "../itemOne",
 			data: {"item_idx" : currentId},
 			success: function(res) {
-				console.log(res.item_info)
+				//console.log(res.item_info)
 				displayPopUp(res)
 				
 				$('#popup').css('display', 'block');
@@ -324,7 +351,7 @@ $(document).ready(function() {
 			url: url,
 			data: data,
 			success: function(data) {
-					console.log(data.items);
+					//console.log(data.items);
 					displayFurniture(data.items, isInitialLoad);
 					isLoading = false;
 			},
@@ -417,7 +444,7 @@ $(document).ready(function() {
 				'alt': item_name
 			});
 			var nameElement = $('<h5>').addClass('title').text(truncatedName); // 아이템 이름 추가
-			var priceElement = $('<h3>').addClass('price').text(item_price + "원"); // 아이템 가격 추가
+			var priceElement = $('<h3>').addClass('price').text(item_price.toLocaleString() + "원"); // 아이템 가격 추가
 
 			// 요소들을 순서대로 추가
 			popUpElement.append(imageElement);
@@ -441,7 +468,7 @@ function displayPopUp(item) {
             <img src="../item_image/${item.item_url}" alt="${item.item_name}">
             <div class="popup-details">
                 <h4>${item.item_name}</h4>
-                <h4>${item.item_price}원</h4>
+                <h4>${item.item_price.toLocaleString()}원</h4>
                 <div class="quantity-control">
                     <button id="decrease-quantity">—</button>
                     <input type="number" id="quantity" value="1" min="1" readonly>
@@ -471,8 +498,8 @@ function displayPopUp(item) {
 	 $(document).on('click', '.po_btn', function() {
 		var item_idx = $(this).attr('name');
 		var cnt = $('#quantity').val();
-		console.log(item_idx);
-		console.log(cnt);
+		//console.log(item_idx);
+		//console.log(cnt);
 	
 		$.ajax({
 	        type: 'POST',
@@ -517,6 +544,17 @@ function displayPopUp(item) {
 
 	// 바로 결제 버튼 클릭 시
 	$(document).on('click', '.p_btn', function() {
+		if (!isLoggedIn) {
+            Swal.fire({
+                title: '로그인이 필요합니다.',
+                text: '로그인 페이지로 이동합니다.',
+                icon: 'warning'
+            }).then(() => {
+                window.location.href = '../html/login.jsp';
+            });
+            return; // 로그인하지 않은 경우 함수 실행 중단
+        }
+        
 		var item_idx = $(this).attr('name');
 		var cnt = $('#quantity').val();
 		

@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+@font-face {
+   font-family: 'GongGothicMedium';
+   src:
+      url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+body {
+    background-color:  #DCDCDC ;
+    font-family: 'GongGothicMedium';
+    margin: 0;
+    padding: 20px;
+    
+}
+.log{
+       margin-bottom: 30px;
+       margin-top:0;
+    text-align: right;
+}
+h2{
+   margin:0;
+}
+
+.log a {
+   color: #000000; /* 링크 색상 */
+   text-decoration: none; /* 밑줄 제거 */
+   margin: 0 10px; /* 각 링크 사이 여백 설정 */
+   font-size:20px;
+}
+.line {
+   margin-top: 30px;
+   border: 1px solid #ccc;
+}
+h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size:36px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+.con_list{
+    width: 70%;
+    margin: 0 auto;
+    
+      
+     align-items: center;
+  
+}
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.inquiry-type {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+.inquiry-type button {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    flex: 1;
+    margin: 0 5px;
+}
+.inquiry-type button.active {
+    background-color: #a9a7a7;
+    border-color: none;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+}
+.inquiry-content input {
+    
+    width:780px;
+    padding: 10px;
+    border: 1px solid #c2bebe;
+    border-radius: 5px;
+    height: 100px;
+    vertical-align: top
+}
+a{
+    text-decoration: none;
+}
+/* 테이블 스타일 */
+.table {
+    
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-row {
+    display: table-row;
+  }
+  
+  .table-cell {
+    display: table-cell;
+    border: 1px solid #bab5b5;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* 링크 스타일 */
+  .table-cell a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .table-cell a:hover {
+
+        background-color: #a9a7a7;
+        border-color: none;
+        color: white;
+        font-weight: 400;
+        font-size: 20px;
+        padding: 5px;
+  }
+  .table-row :hover{
+    background-color:#a9a7a7 ;
+  }

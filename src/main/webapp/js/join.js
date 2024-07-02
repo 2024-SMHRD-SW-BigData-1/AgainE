@@ -44,7 +44,7 @@ $(document).ready(function() {
                 },
                 dataType: 'json',
                 success: function(res) {
-                    console.log("AJAX 요청 성공");
+                    //console.log("AJAX 요청 성공");
                     if (res.isAvailable) {
                         isUseridAvailable = true; // 아이디가 사용 가능함을 표시
                         useridMessage.textContent = '사용 가능한 아이디입니다.';

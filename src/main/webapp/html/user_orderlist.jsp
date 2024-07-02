@@ -1,15 +1,30 @@
+<%@page import="java.time.LocalDateTime"%>
+<%@page import="java.sql.Date"%>
+<%@ page import="java.text.NumberFormat" %>
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.User"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<% User user = (User)session.getAttribute("login_user"); %>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<% 
+	User user = (User)session.getAttribute("login_user"); 
+	List<HashMap<String, Object>> orderDetailCounts = (List<HashMap<String, Object>>) session.getAttribute("orderDetailCounts");
+	List<HashMap<String, Object>> orderDetails = (List<HashMap<String, Object>>) session.getAttribute("orderDetails");
+
+	if(user == null){
+		response.sendRedirect("index.jsp");
+		return;
+	}
+
+%>
+
 <!DOCTYPE html>
-
 <html class="no-js">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ColorSpace</title>
+    <title>pay&mdash;</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
     <meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -22,9 +37,10 @@
     <link rel="stylesheet" href="../style/css/bootstrap.css">
     <link rel="stylesheet" href="../style/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../style/css/owl.theme.default.min.css">
-   <link rel="stylesheet" href="../style/css/mypage.css">
-    <link rel="stylesheet" href="../style/css/user_orderlist.css"> 
+  <link rel="stylesheet" href="../style/css/mypage.css">
+    <link rel="stylesheet" href="../style/css/user_orderlist.css">
     <script src="js/modernizr-2.6.2.min.js"></script>
+    <title>Order Status</title>
     <style>
         @keyframes float {
             0%,
@@ -35,7 +51,64 @@
                 transform: translateY(-15px);
             }
         }
-    </style>
+        
+    	/* 주문현황테이블이에요!!  */
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		
+		table, th, td {
+			border: none;
+		}
+		
+		tr:first-child, tr:last-child {
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+		}
+		
+		td {
+			padding: 10px;
+		}
+		
+		
+
+    	
+    	 
+       .order-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .order-card {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .order-card img {
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .order-details {
+            flex-grow: 1;
+        }
+        
+        .order-details h5 #name{
+            margin: 5px 0;
+            font-size: 15px; /* px 단위로 변경 */
+            color: #000000; /* 글자 색상 변경 */
+        }
+        
+		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../js/delete_cookie.js"></script>
 </head>
 
 
@@ -52,7 +125,7 @@
                 <% if (user.getUser_type().equals("f") || user.getUser_type().equals("t")) { %>
                     <!-- 사용자일때 -->
                     <div class="log">
-                        <i class="fa fa-love"></i><a href="../logout">로그아웃</a> <a>|</a> <i class="fa fa-love"><a href="#">mypage</a></i> <a>|</a> <i class="fa fa-love"></i><a href="#">문의하기</a>
+                        <i class="fa fa-love"></i><a href="../logout">로그아웃</a> <a>|</a> <i class="fa fa-love"><a href="../MypageService">mypage</a></i> <a>|</a> <i class="fa fa-love"></i><a href="#">문의하기</a>
                     </div>
                     <div class="line"></div>
                 <% } %>
@@ -66,87 +139,157 @@
         <div class="line"></div>
     </div>
 </header>
+     
+     
+        <div class="container" style="padding-top:0px;">
+     <h2><%=user.getUser_id() %> 님의 주문처리현황</h2>
+        <main>
+        
+        
+			<section class="order-state">
+			<br>
+				<!-- <h4><a href="../OrderService">주문처리현황</a></h4> -->
+				<%
+				if (orderDetailCounts != null) {
+					if (!orderDetailCounts.isEmpty()) {
+				%>
 
-   <div class="container">
 
-      <main>
+				<table>
+					<tr>
+						<td><div class="status-item" id="배송준비중">
+								<span class="status-label">배송준비중</span>
+								<span class="status-value">
+										<%
+										int countPreparing = 0;
+										for (HashMap<String, Object> detailCount : orderDetailCounts) {
+											String orderState = (String) detailCount.get("orderState");
+											long detailCountValue = (long) detailCount.get("detailCount");
+											if ("배송준비중".equals(orderState)) {
+												countPreparing += detailCountValue;
+											}
+										}
+										out.print(countPreparing);
+										%>
+								</span>
+							</div></td>
+							
+						<td><div class="status-item" id="배송중">
+								<span class="status-label">배송중</span>
+								<span class="status-value">
+										<%
+										int countShipping = 0;
+										for (HashMap<String, Object> detailCount : orderDetailCounts) {
+											String orderState = (String) detailCount.get("orderState");
+											long detailCountValue = (long) detailCount.get("detailCount");
+											if ("배송중".equals(orderState)) {
+												countShipping += detailCountValue;
+											}
+										}
+										out.print(countShipping);
+										%>
+								</span>
+							</div></td>
 
-         <section class="user-info">
-            <br>
-            <h2><%=user.getUser_id()%>
-               님의 MyPage
-            </h2>
-            <a href="user_update.jsp"><button>회원정보 수정</button></a>
-         </section>
-         <br>
-         <section class="order-status">
-            <h2>주문처리현황</h2>
-            <div class="status-details">
-               <div class="status-item">
-                  <a href="user_orderlist.jsp"> <span class="status-label">배송준비중</span></a>
-                  <a href="user_orderlist.jsp"> <span class="status-value">4</span></a>
-               </div>
-               <div class="status-item">
-                  <a href="user_orderlist.jsp"><span class="status-label">배송중</span></a>
-                  <a href="user_orderlist.jsp"><span class="status-value">0</span></a>
-               </div>
-               <div class="status-item">
-                  <a href="user_orderlist.jsp"><span class="status-label">배송완료</span></a>
-                  <a href="user_orderlist.jsp"><span class="status-value">0</span></a>
-               </div>
+
+
+						<td><div class="status-item" id="배송완료">
+								<span class="status-label">배송완료</span>
+								<span class="status-value">
+										<%
+										int countCompleted = 0;
+										for (HashMap<String, Object> detailCount : orderDetailCounts) {
+											String orderState = (String) detailCount.get("orderState");
+											long detailCountValue = (long) detailCount.get("detailCount");
+											if ("배송완료".equals(orderState)) {
+												countCompleted += detailCountValue;
+											}
+										}
+										out.print(countCompleted);
+										%>
+								</span>
+							</div></td>
+					</tr>
+					<%
+					} else {
+					out.print("주문 상세 내역이 없습니다.");
+					}
+					} else {
+					out.print("주문 상세 내역이 없습니다.");
+					}
+					%>
+				</table>
+			</section>
+
+			<br>
+			
+
+			
+        <section class="order-list">
+        <h3>주문 내역</h3>
+        
+        <div class="order-container">
+            <% if (orderDetails != null) {
+                for (HashMap<String, Object> detail : orderDetails) { %>
+            <div class="order-card">
+                <img src="../item_image/<%= detail.get("item_url") %>" alt="item image">
+                <div class="order-details">
+                
+                    <%  LocalDateTime orderedAt = (LocalDateTime) detail.get("ordered_at"); 
+	                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+	                    String formattedDate = orderedAt.format(formatter); 
+	                    Integer totalPrice = (Integer)detail.get("total_item");
+	                    NumberFormat formatterPrice = NumberFormat.getInstance();
+	                    String formattedPrice = "";
+
+	                    if (totalPrice != null) {
+	                        formattedPrice = formatterPrice.format(totalPrice);
+	                    } else {
+	                        formattedPrice = "0"; // 기본값 설정
+	                    }
+	                    
+	                    %>
+                    	
+                    <h5 id="date"><%= formattedDate %></h5>
+                    <h5 id="state">주문 상태: <  <%= detail.get("order_state") %> ></h5>
+                    <h5 id="name"><%= detail.get("item_name") %></h5>
+                    <h5 id="num">수량: <%= detail.get("order_cnt") %></h5>
+                    <h5 id="price">주문 가격: <%= formattedPrice %>원</h5>
+                    
+                </div>
             </div>
-
-           <!--  <form action="../RoomimageService" method="post" enctype="multipart/form-data">
-               <div class="my-room">
-                  <h3>my room</h3> -->
-           <section class="order-list">
-            <!-- <h2>주문 내역</h2> -->
-            <article class="order-item">
-                <h4 class="order-date">24.06.10 ( 주문날짜 )</h4>
-                <div class="product">
-                    <img src="/nitro/images/img_1.jpg" alt="로이 항균 먼지없는 4면 고정밴딩 침대패드 SS/Q 19컬러">
-                    <div class="product-details">
-                        <h4>로이 항균 먼지없는 4면 고정밴딩 침대패드 SS/Q 19컬러</h4>
-                        <h5>38500원</h5>
-                        <span>1개</span>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="/nitro/images/ex1.jpg" alt="로이 항균 먼지없는 4면 고정밴딩 침대패드 SS/Q 19컬러">
-                    <div class="product-details">
-                        <h4>로이 항균 먼지없는 4면 고정밴딩 침대패드 SS/Q 19컬러</h4>
-                        <h5>17900원</h5>
-                        <span>3개</span>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <a href="mypage.jsp"><button class="mypage-button">마이페이지로</button></a>
+            <% }} else { %>
+            <p>주문 내역이 없습니다.</p>
+            <% } %>
+        </div>
+    </section> 
+        
+        
+        <a href="../MypageService"><button class="mypage-button">마이페이지로</button></a>
     </main> 
-
-  
+        </div>
 
 
 
 
             <!-- jQuery -->
-            <script src="js/jquery.min.js"></script>
+            <script src="../js/js2/jquery.min.js"></script>
             <!-- jQuery Easing -->
-            <script src="js/jquery.easing.1.3.js"></script>
+            <script src="../js/js2/jquery.easing.1.3.js"></script>
             <!-- Bootstrap -->
-            <script src="js/bootstrap.min.js"></script>
+            <script src="../js/js2/bootstrap.min.js"></script>
             <!-- Carousel -->
-            <script src="js/owl.carousel.min.js"></script>
+            <script src="../js/js2/owl.carousel.min.js"></script>
             <!-- Stellar -->
-            <script src="js/jquery.stellar.min.js"></script>
+            <script src="../js/js2/jquery.stellar.min.js"></script>
             <!-- Waypoints -->
-            <script src="js/jquery.waypoints.min.js"></script>
+            <script src="../js/js2/jquery.waypoints.min.js"></script>
             <!-- Counters -->
-            <script src="js/jquery.countTo.js"></script>
+            <script src="../js/js2/jquery.countTo.js"></script>
             <!-- 삭제 -->
-            <script src="js/script.js"></script>
+            <script src="../js/js2/script.js"></script>
             <!-- MAIN JS -->
-            <script src="js/main.js"></script>
+            <script src="../js/js2/main.js"></script>
 
 
 

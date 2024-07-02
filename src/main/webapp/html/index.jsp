@@ -3,9 +3,17 @@
    pageEncoding="UTF-8"%>
 <%
 User user = (User) session.getAttribute("login_user");
+if(user != null){
+	
+if(user.getUser_type().equals("a")){
+	response.sendRedirect("admin.jsp");
+	return;
+}
+}
+
+boolean isLoggedIn = (user != null);
 %> 
 <!DOCTYPE html>
-
 <html class="no-js">
 
 <head>
@@ -100,6 +108,10 @@ translateY
    href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
 <script
    src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+   <script>
+        var isLoggedIn = <%= isLoggedIn %> ? true : false;
+    </script>
+    <script type="text/javascript" src="../js/delete_cookie.js"></script>
 </head>
 
 <body>
@@ -118,7 +130,11 @@ translateY
             <% if (user.getUser_type().equals("f") || user.getUser_type().equals("t")) { %>
                 <!-- 사용자일때 -->
                 <div class="log">
-                    <i class="fa fa-love"></i><a href="../logout">로그아웃</a> <a>|</a> <i class="fa fa-love"></i><a href="mypage.jsp">mypage</a> <a>|</a> <i class="fa fa-love"></i><a href="#">문의하기</a>
+                    <i class="fa fa-love"></i><a href="../logout">로그아웃</a> 
+                    <a>|</a> 
+                    <i class="fa fa-love"></i><a href="../MypageService">mypage</a> 
+                    <a>|</a> 
+                    <i class="fa fa-love"></i><a href="user_board.jsp">문의하기</a>
                 </div>
                 <div class="line"></div>
             <% } %>
@@ -373,53 +389,22 @@ translateY
 
 
 
-         <%
-         if (user != null) {
-         %>
          <!-- 로그인 했을 시  -->
-         <%
-         if (user.getUser_type().equals("f") || user.getUser_type().equals("t")) {
-         %>
-         <!-- 사용자일때 -->
-         <div class="item_container"></div>
-
-
-
-
-
-
-         <%
-         } else if (user.getUser_type().equals("a")) {
-         %>
-         <!-- 관리자로 로그인 시 -->
-         <div>
-            <h1>제품수정/추가</h1>
-            <h1>주문내역</h1>
-            <h1>문의내역</h1>
-            <a href="../logout"><h1>로그아웃</h1></a>
-
+         <% if (user != null) { %>
+        
+        <!-- 사용자일때 -->
+         <% if (user.getUser_type().equals("f") || user.getUser_type().equals("t")) {%>
+         <div class="item_container">
          </div>
 
 
-
-
-
-         <%
-         }
-         } else {
-         %>
          <!-- 로그인 안했을 때 -->
-         <div class="item_container"></div>
-         
-         
-         
-         
-         
-         
-         
-         <%
-         }
-         %>
+        <% }} else { %> 
+         <div class="item_container">
+         </div>
+       
+          <% }  %>
+       
 
 
 

@@ -19,7 +19,7 @@ public class ItemOneSelectService extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String item_idx = request.getParameter("item_idx");
+		int item_idx = Integer.parseInt(request.getParameter("item_idx"));
 	
 		// System.out.println("클릭된 가구의 id :" + item_idx);
 		

@@ -55,11 +55,13 @@ public class ItemDAO {
 			if(cnt > 0) {
 				session.commit();
 			}else {
+				
 				System.out.println("저장 실패");
 				session.rollback();
 			}
 			
 		} catch (Exception e) {
+			session.rollback();
 			System.out.println("가구 저장 실패");
 			e.printStackTrace();
 		} finally {
@@ -69,8 +71,8 @@ public class ItemDAO {
 		return cnt;
 	}
 	
-	// 가구 한 개만 select(item_idx 같은 애들)
-	public Item selectOneItem(String item_idx) {
+	// 가구 한 개만 select(item_idx 동일한 애들)
+	public Item selectOneItem(int item_idx) {
 		SqlSession session = factory.openSession();
 		Item item =  null;
 		try {
@@ -227,6 +229,46 @@ public class ItemDAO {
 	
 	
 	
+	// 관리자 새가구 insert
+		public int insertAdminItems(Item item) {
+		    SqlSession session = factory.openSession();
+		    int cnt = 0;
+		    try {
+		        cnt = session.update("ItemMapper.insertAdminItems", item);
+		        if (cnt > 0) {
+		            session.commit();
+		        } else {
+		            session.rollback();
+		        }
+		    } catch (Exception e) {
+		    	System.out.println("DB업데이트DAO실패");
+		        e.printStackTrace();
+		    } finally {
+		        session.close();
+		    }
+		    return cnt;
+		}
 	
+	
+		// 관리자 가구 업데이트 업데이트
+		public int updateItem(Item item) {
+		    SqlSession session = factory.openSession();
+		    int cnt = 0;
+		    try {
+		        cnt = session.update("ItemMapper.updateItem", item);
+		        if (cnt > 0) {
+		            session.commit();
+		        } else {
+		            session.rollback();
+		        }
+		    } catch (Exception e) {
+		    	System.out.println("DB업데이트DAO실패");
+		        e.printStackTrace();
+		    } finally {
+		        session.close();
+		    }
+		    return cnt;
+		}
+		
 	
 }
