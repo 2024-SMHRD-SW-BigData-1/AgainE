@@ -38,7 +38,7 @@
     <tr>
         <td>라이브러리</td>
         <td>
-            <img src="https://img.shields.io/badge/MaskR-CNN-6107B0?style=for-the-badge&logo=MaskR-CNN&logoColor=white"/>
+            <img src="https://img.shields.io/badge/MaskRCNN-6107B0?style=for-the-badge&logo=MaskRCNN&logoColor=white"/>
             K-Means Clustering
         </td>
     </tr>
