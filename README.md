@@ -38,7 +38,7 @@
     <tr>
         <td>라이브러리</td>
         <td>
-            Mask R-CNN
+            <img src="https://img.shields.io/badge/Mask R-CNN-6107B0?style=for-the-badge&logo=Mask R-CNN&logoColor=white"/>
             K-Means Clustering
         </td>
     </tr>
@@ -60,7 +60,7 @@
     <tr>
         <td>데이터베이스</td>
         <td>
-            <img src="https://img.shields.io/badge/MySQL-2F629D?style=for-the-badge&logo=MySQL&logoColor=white"/>
+            <img src="https://img.shields.io/badge/MySQL-2C79D1?style=for-the-badge&logo=MySQL&logoColor=white"/>
         </td>
     </tr>
     <tr>
