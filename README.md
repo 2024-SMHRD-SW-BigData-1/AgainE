@@ -124,11 +124,12 @@
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
-    <td align="center">사진</td>
-    <td align="center">사진</td>
-    <td align="center">사진</td>
-    <td align="center">사진</td>
-    <td align="center">사진</td>
+    <td align="center">![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/47ee7a5a-98b4-4006-b012-6c076d0b17d5)</td>
+    <td align="center">![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/d1315b08-f2c3-4f00-8a5f-4a679c67868c)</td>
+    <td align="center">![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/8aef2f9a-a87f-4bce-84cb-052fede1c82d)</td>
+    <td align="center">![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/00b98771-cc85-4f7d-b6dd-8ad46c7cd35a)</td>
+    <td align="center">![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/0c73e787-1597-404d-98ec-510a767f8f1c)</td>
+
   </tr>
   <tr>
     <td align="center"><strong>황세진</strong></td>
