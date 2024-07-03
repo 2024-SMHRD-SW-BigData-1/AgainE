@@ -113,7 +113,7 @@ h4 {
          </span> 
          <span> &nbsp&nbsp 입니다.</span>
          
-          <br> <a class="f" href="search_pw"> 비밀번호 찾기 </a>
+          <br> <a class="f" href="search_pw.jsp"> 비밀번호 찾기 </a>
 
 
          <div class="form-group">

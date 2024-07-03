@@ -125,7 +125,7 @@
                 <% if (user.getUser_type().equals("f") || user.getUser_type().equals("t")) { %>
                     <!-- 사용자일때 -->
                     <div class="log">
-                        <i class="fa fa-love"></i><a href="../logout">로그아웃</a> <a>|</a> <i class="fa fa-love"><a href="../MypageService">mypage</a></i> <a>|</a> <i class="fa fa-love"></i><a href="#">문의하기</a>
+                        <i class="fa fa-love"></i><a href="../logout">로그아웃</a> <a>|</a> <i class="fa fa-love"><a href="../MypageService">mypage</a></i> <a>|</a> <i class="fa fa-love"></i><a href="user_board.jsp">문의하기</a>
                     </div>
                     <div class="line"></div>
                 <% } %>
