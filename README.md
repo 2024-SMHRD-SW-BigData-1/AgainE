@@ -125,7 +125,7 @@
 <table>
   <tr>
     <td align="center">
-        ![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/47ee7a5a-98b4-4006-b012-6c076d0b17d5)
+        <img src="![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/47ee7a5a-98b4-4006-b012-6c076d0b17d5)" width="100" height="100"/>
     </td>
     <td align="center">![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/d1315b08-f2c3-4f00-8a5f-4a679c67868c)</td>
     <td align="center">![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/8aef2f9a-a87f-4bce-84cb-052fede1c82d)</td>
