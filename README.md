@@ -97,8 +97,8 @@
 ![1](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/fc1bdace-8522-4007-a549-93d9564e069c)
 <br>
 
-### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
+### 메인페이지
+![2](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/a600dd6c-1122-4ca2-89b9-4502e108a774)
 <br>
 
 ### 일정/고객센터
@@ -124,7 +124,7 @@
   <tr>
     <td align="center"><b>Backend</b></td>
     <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Backend</b></td>
+    <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Backend</b></td>
     <td align="center"><b>Backend</b></td>
   </tr>
