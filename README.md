@@ -124,11 +124,11 @@
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
-    <td align="center"><img src="" width="100" height="100"/></td>
-    <td align="center"><img src="" width="100" height="100"/></td>
-    <td align="center"><img src="" width="100" height="100"/></td>
-    <td align="center"><img src="" width="100" height="100"/></td>
-    <td align="center"><img src="" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/23a03bad-2905-4a97-b62f-c5cc343fdb62" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/7df4aa78-2664-48b6-abc4-1ecea4b8f536" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/4014d85b-8714-4ee1-b361-c05ccb31e0ff" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/d611a067-ec49-42bb-9070-33a4e134b082" width="100" height="100"/></td>
+    <td align="center"><img src="https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/d68acdb9-75f1-4365-be59-2be83c339b62" width="100" height="100"/></td>
 
   </tr>
   <tr>
