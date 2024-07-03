@@ -101,8 +101,24 @@
 ![2](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/a600dd6c-1122-4ca2-89b9-4502e108a774)
 <br>
 
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+### 제품상세/장바구니/결제페이지
+![3](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/f71bb073-a053-4f7e-9faf-94f6dd338c47)
+<br>
+
+### 마이페이지/회원정보수정&탈퇴/구매내역/문의하기/문의내역
+![4](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/4e2e2f01-6d26-4555-8025-7e69d9dcf86e)
+<br>
+
+### 관리자페이지(제품수정&추가)
+![5](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/34a1238a-5be1-4bc6-a912-867e7949c050)
+<br>
+
+### 관리자페이지(주문내역&주문상태수정)
+![6](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/a6e5a4ad-6cb0-487e-a450-8c75b7b02dbd)
+<br>
+
+### 관리자페이지(문의내역&답변)
+![7](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/1069734e-2c36-42c6-9184-baa330b584c6)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
