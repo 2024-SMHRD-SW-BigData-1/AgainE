@@ -11,9 +11,24 @@
 	
 	<!-- sql문 작성  -->
 	
-	<insert id="replyInsert" parameterType="Reply">
-		INSERT INTO tb_reply VALUES (null, #{b_idx}, #{rep_title}, #{rep_content}, #{rep_file}, #{replied_at}, #{admin_id})
-	</insert>
+	<!-- 응답 작성, 문의글 중복 시 기존 내용 업데이트 -->
+	<!-- <insert id="replyInsert" parameterType="Reply">
+		INSERT INTO tb_reply (rep_idx, b_idx, rep_title, rep_content, rep_file, replied_at, admin_id  )
+		VALUES (null, #{b_idx}, #{rep_title}, #{rep_content}, #{rep_file}, #{replied_at}, #{admin_id})
+		ON DUPLICATE KEY UPDATE
+		rep_idx = VALUES(null), rep_title = VALUES(#{rep_title}), rep_content = VALUES(#{rep_content}), rep_file = VALUES(#{rep_file}),
+		replied_at = VALUES(#{replied_at}), admin_id = VALUES(#{admin_id})
+	</insert> -->
 	
+	<insert id="replyInsert" parameterType="Reply">
+			INSERT INTO tb_reply (rep_idx, b_idx, rep_title, rep_content, rep_file, replied_at, admin_id)
+		VALUES (null, #{b_idx}, #{rep_title}, #{rep_content}, #{rep_file}, #{replied_at}, #{admin_id})
+		ON DUPLICATE KEY UPDATE
+		rep_title = VALUES(rep_title), 
+		rep_content = VALUES(rep_content), 
+		rep_file = VALUES(rep_file),
+		replied_at = VALUES(replied_at), 
+		admin_id = VALUES(admin_id);
+	</insert>
 	
 </mapper>

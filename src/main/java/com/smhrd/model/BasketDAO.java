@@ -121,7 +121,7 @@ public class BasketDAO {
 		return cnt;
 	}
 
-	// 결제 후 장바구니 전체 삭제
+	// (결제 후) 장바구니 전체 삭제
 	public int afterPayBasketDelete(String user_id) {
 		SqlSession session = factory.openSession();
 		int cnt = 0;

@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="../style/css/user_board.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="../js/delete_cookie.js"></script>
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../js/user_board.js"></script>
 </head>
 
 <body>
@@ -32,6 +38,7 @@
 			<div>
 				<select id="inquiryType" name="kind" class="custom-select" required>
 					<option value="" disabled selected>문의 유형 선택</option>
+					<option value="상품">상품</option>
 					<option value="배송">배송</option>
 					<option value="반품">반품</option>
 					<option value="교환">교환</option>

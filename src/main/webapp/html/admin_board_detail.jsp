@@ -78,7 +78,6 @@ translateY(
 <body>
 <div id="fh5co-main">
       <div class="fh5co-narrow-content">
-         <!-- a 태그 안에 로그인전 , 후  다르게 페이지가 이동 되어야함 index or index_main -->
          <h2 class="fh5co-heading animate-box"
             data-animate-effect="fadeInLeft">
             <a style="text-decoration: none; color: #000000;"

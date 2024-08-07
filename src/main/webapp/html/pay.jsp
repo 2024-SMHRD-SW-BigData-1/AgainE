@@ -1,3 +1,5 @@
+<%@page import="com.fasterxml.jackson.datatype.jsr310.JavaTimeModule"%>
+<%@page import="com.fasterxml.jackson.databind.ObjectMapper"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@page import="com.smhrd.model.User"%>
@@ -10,6 +12,11 @@ if (user == null) {
     response.sendRedirect("login.jsp");
     return;
 }
+
+// user객체 json직렬화해서 js에서 사용하기
+ObjectMapper mapper = new ObjectMapper();
+mapper.registerModule(new JavaTimeModule());  // JavaTimeModule 등록
+String loginUserJson = mapper.writeValueAsString(user);
 
 // 쿼리스트링 값 가지고 오기
 String itemIdxStr = request.getParameter("item_idx");
@@ -118,6 +125,12 @@ if (totalPrice != null) {
 .large-popup .swal2-content {
     font-size: 1.5em !important;  /* 내용 글씨 크기 조정 */
 }
+
+.pay_method{
+	height : 100px;
+}
+
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
@@ -192,16 +205,26 @@ if (totalPrice != null) {
         
             <h4>결제수단</h4>
             <div class="Su" style="font-family: 'Roboto', Arial, sans-serif;">
-                <label> 
-                    <input type="radio" name="option" value="1">
-                    무통장입금 (계좌이체) &nbsp;&nbsp;&nbsp;&nbsp; 065328451286366 &nbsp; 광주은행
+            
+            	<!-- <button type="button" class="pay_method">
+            		<img alt="" src="../images/nice.png">
+            		<span style="padding:0px;">NicePayment</span>
+            	</button>
+            	
+            	<button type="button" class="pay_method">
+            		<span style="padding:0px;">무통장입금</span>
+            	</button> -->
+            	
+               <label> 
+                    <input type="radio" name="option" value="virtual"> 무통장입금
+                    <!-- 무통장입금 (계좌이체) &nbsp;&nbsp;&nbsp;&nbsp; 065328451286366 &nbsp; 광주은행 -->
                 </label>
                 <br> 
                 <label> 
-                    <input type="radio" name="option" value="2"> 카드
+                    <input type="radio" name="option" value="card"> 카드결제  <!-- 나이스페이먼츠로 진행 -->
                 </label>
 
-                <div id="card-options">
+                <!-- <div id="card-options">
                     <label> 
                         <select id="card_Type" name="cardType" class="custom-select">
                             <option value="" disabled selected>카드를 선택해주세요.</option>
@@ -222,7 +245,7 @@ if (totalPrice != null) {
                     <label class="in"> 
                         <input type="text" name="cardNumber" id="card-number" placeholder="카드 번호를 입력해주세요." style="border: none; outline: none;">
                     </label>
-                </div>
+                </div> -->
 
                 <div>
                     <button type="button" id="submit-btn"> 총 <%=formattedPrice %> 원 결제 하기</button>
@@ -231,17 +254,19 @@ if (totalPrice != null) {
         </form>
     </div>
     
-    		<script>
-				var totalPrice = <%= totalPrice != null ? totalPrice : 0 %>;
-				console.log("totalPrice"+totalPrice);
-				var payTotalPrice = totalPrice;
-				console.log("payTotalPrice"+payTotalPrice);
-			    var itemIdx = '<%= itemIdxStr != null ? itemIdxStr : "" %>';
-			    var cnt = '<%= cntStr != null ? cntStr : "" %>';
-			</script>
+<script type="text/javascript">
+	var totalPrice = <%= totalPrice != null ? totalPrice : 0 %>;
+	console.log("totalPrice"+totalPrice);
+	var payTotalPrice = totalPrice;
+	console.log("payTotalPrice"+payTotalPrice);
+	var itemIdx = '<%= itemIdxStr != null ? itemIdxStr : "" %>';
+	var cnt = '<%= cntStr != null ? cntStr : "" %>';
+	var loginUserJson = <%= loginUserJson %>;
+</script>
             
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../js/pay.js"></script>
-    <script type="text/javascript" src="../js/delete_cookie.js"></script>
+<script type="text/javascript" src="../js/delete_cookie.js"></script>
+<script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
 </body>
 </html>

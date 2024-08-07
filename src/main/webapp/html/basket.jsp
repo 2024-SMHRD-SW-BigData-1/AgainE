@@ -187,7 +187,9 @@ if (user == null) {
 						
 						
 						<div id="exist-cart">
-							<div class="total-price">
+							<button id="deleteBasketAll">장바구니 전체 삭제</button>
+							
+							<div class="total-price" style="margin-top : 30px;">
 							<p>총 금액</p>
 							<p id="total-price"> 0 원</p>
 							</div>

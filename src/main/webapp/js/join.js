@@ -21,7 +21,7 @@ $(document).ready(function() {
     if(join_success == "false"){
 		swal.fire({
 				   title: "회원가입 실패",
-				   text: "이메일이 기존 회원과 중복되었습니다 다른 이메일을 입력해주세요",
+				   text: "다시 시도해주세요.",
 				   icon: "error" //"info,success,warning,error" 중 택1
 				});
 	}

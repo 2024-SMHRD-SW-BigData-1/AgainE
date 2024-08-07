@@ -226,6 +226,24 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ReplyInsertService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PaymentCheckService</servlet-name>
+  	<display-name>PaymentCheckService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.PaymentCheckService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PaymentCancelService</servlet-name>
+  	<display-name>PaymentCancelService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.PaymentCancelService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BasketDeleteAllService</servlet-name>
+  	<display-name>BasketDeleteAllService</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.BasketDeleteAllService</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
   	<url-pattern>/join</url-pattern>
@@ -373,5 +391,17 @@
   <servlet-mapping>
   	<servlet-name>ReplyInsertService</servlet-name>
   	<url-pattern>/ReplyInsertService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PaymentCheckService</servlet-name>
+  	<url-pattern>/payment_check</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PaymentCancelService</servlet-name>
+  	<url-pattern>/payment_cancel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BasketDeleteAllService</servlet-name>
+  	<url-pattern>/basket_delete_all</url-pattern>
   </servlet-mapping>
 </web-app>
