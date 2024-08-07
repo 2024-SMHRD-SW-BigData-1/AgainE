@@ -38,7 +38,7 @@
     <tr>
         <td>라이브러리</td>
         <td>
-            <img src="https://img.shields.io/badge/Mask rCNN-6107B0?style=for-the-badge&logo=MaskRCNN&logoColor=white"/>
+            <img src="https://img.shields.io/badge/YOLOv5s-6107B0?style=for-the-badge&logo=YOLOv5s&logoColor=white"/>
             <img src="https://img.shields.io/badge/KMeans Clustering-EA2795?style=for-the-badge&logo=KMeans Clustering&logoColor=white"/>
         </td>
     </tr>
