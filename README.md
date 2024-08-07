@@ -76,7 +76,7 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조)
-![image](https://github.com/2024-SMHRD-SW-BigData-1/AgainE/assets/166770486/c331a2e5-cb75-4f52-a4b6-e208244d6324)
+![image](https://github.com/user-attachments/assets/e80b34ed-667d-442c-8202-1beedc0018c3)
 <br>
 
 ## 📌 SW유스케이스
