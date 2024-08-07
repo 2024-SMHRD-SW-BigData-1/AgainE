@@ -71,14 +71,15 @@ public class BoardWrite extends HttpServlet {
 
 		if (cnt > 0) {
 			System.out.println("게시판 작성 완료");
-			response.setContentType("text/html; charset=UTF-8");
-			response.getWriter().println("<script>" 
-					+ "alert('문의글 작성이 완료되었습니다');" 
-					+ " window.history.back(); </script>");
-
+			/*
+			 * response.setContentType("text/html; charset=UTF-8");
+			 * response.getWriter().println("<script>" + "alert('문의글 작성이 완료되었습니다');" +
+			 * " window.history.back(); </script>");
+			 */
+			response.sendRedirect("html/user_board.jsp?board_success=true");
 		} else {
 			System.out.println("게시글 작성 실패!!!");
-			response.sendRedirect("html/user_board.jsp");
+			response.sendRedirect("html/user_board.jsp?board_success=false");
 		}
 
 	}

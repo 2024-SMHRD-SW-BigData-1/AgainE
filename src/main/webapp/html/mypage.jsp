@@ -12,13 +12,14 @@
 	pageEncoding="UTF-8"%>
 <%
     User user = (User) session.getAttribute("login_user");
+	if (user == null) {
+	    response.sendRedirect("login.jsp");
+	    return; // 리디렉션 후 나머지 코드 실행 방지
+	}
 	List<HashMap<String, Object>> orderDetailCounts = (List<HashMap<String, Object>>) session.getAttribute("orderDetailCounts");
 	List<HashMap<String, Object>> orderDetails = (List<HashMap<String, Object>>) session.getAttribute("orderDetails");
 	List<HashMap<String, Object>> boardDetails = (List<HashMap<String, Object>>) session.getAttribute("boardDetails");
-    if (user == null) {
-        response.sendRedirect("login.jsp");
-        return; // 리디렉션 후 나머지 코드 실행 방지
-    }
+    
     System.out.println(user.getUser_room_color());
     System.out.println(user.getUser_room_tone());
     System.out.println(user.getUser_room_url());
@@ -27,6 +28,7 @@
     ObjectMapper mapper = new ObjectMapper();
     mapper.registerModule(new JavaTimeModule());  // JavaTimeModule 등록
     String loginUserJson = mapper.writeValueAsString(user);
+   // System.out.println(loginUserJson);
 %>
 
 <!DOCTYPE html>
@@ -97,8 +99,7 @@ keyframes float { 0%, 100% {
 
 
 
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../js/mypage.js"></script>
     <script type="text/javascript" src="../js/delete_cookie.js"></script>

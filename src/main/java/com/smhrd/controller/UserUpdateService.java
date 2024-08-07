@@ -33,12 +33,19 @@ public class UserUpdateService extends HttpServlet {
 		String user_pw = request.getParameter("update_pw");
 		String user_name = request.getParameter("update_name");
 		String user_phone = request.getParameter("update_phone");
-		String user_addr = request.getParameter("update_addr");
 		String user_email = request.getParameter("update_email");
+//		String user_addr = request.getParameter("update_addr");
+		
+		String postcode = request.getParameter("postcode");
+		String address = request.getParameter("address");
+		String detailAddress = request.getParameter("detailAddress");
+		String extraAddress = request.getParameter("extraAddress"); 
+			String user_addr = "(" + postcode + ") " + address + " " + detailAddress + " " + extraAddress;
+			System.out.println(user_addr);
 
 
 		// 사용자 객체 생성 및 필드 설정
-		user.setUser_id(user.getUser_id());
+		// user.setUser_id(user.getUser_id());
 		user.setUser_pw(user_pw);
 		user.setUser_name(user_name);
 		user.setUser_email(user_email);

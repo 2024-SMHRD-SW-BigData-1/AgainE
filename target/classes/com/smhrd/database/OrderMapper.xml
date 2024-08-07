@@ -12,8 +12,11 @@
 	<!-- sql문 작성  -->
 	
 	<!-- 결제 시 주문 넣기 -->
+	<!-- useGeneratedKeys="true" keyProperty="order_idx" : 테이블에 새로운 데이터 넣을 때 자동생성되는 값을 자바 객체에 다시 할당하기
+		order객체의 order_idx 필드에다가 자동생성된 값(auto_increment 설정된 order_idx 컬럼) 넣는 기능
+	  -->
 	<insert id="insertOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="order_idx">
-		INSERT INTO tb_order VALUES (null, #{total_amount}, #{pay_method}, #{user_id}, #{ordered_at}, #{order_state})
+		INSERT INTO tb_order VALUES (null, #{total_amount}, #{pay_method}, #{user_id}, #{ordered_at}, #{order_state}, #{payment_id})
 	</insert>
 	
 	<!-- 결제 시 삽입된 주문의 인덱스 번호 가져오기 -->

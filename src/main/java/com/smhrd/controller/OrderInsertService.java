@@ -32,30 +32,34 @@ public class OrderInsertService extends HttpServlet {
 		// 결제 타입
 		String option = request.getParameter("option");
 		String pay_method = null;
-		String cardType = request.getParameter("cardType");
-		if(option.equals("1")) {
+		// String cardType = request.getParameter("cardType");
+		if(option.equals("virtual")) {
 			pay_method = "무통장입금";
-		}else if(option.equals("2")) {
-			pay_method = "카드" + cardType;
+		}else if(option.equals("card")) {
+			pay_method = "카드";
 		}
 		
 		
         // 주문 총액
-		System.out.println("payTotalPrice"+request.getParameter("payTotalPrice"));
+		System.out.println("payTotalPrice : "+request.getParameter("payTotalPrice"));
         Integer payTotalPrice = Integer.parseInt(request.getParameter("payTotalPrice"));
         
         // 주문 상태 디폴트값
         String order_state = "배송준비중";
         
+        // 주문 날짜(현재 시각)
         LocalDateTime ordered_at = LocalDateTime.now();
         ordered_at = ordered_at.truncatedTo(ChronoUnit.SECONDS);
+        
+        // 결제 api의 결제 id
+        String payment_id = request.getParameter("paymentId");
 
         // 각 파라미터를 처리
 //        System.out.println("결제 수단: " + option);
 //        System.out.println("카드 타입: " + cardType);
 //        System.out.println("총 결제 금액: " + payTotalPrice);
 	
-        Order order = new Order(payTotalPrice, pay_method, user_id, ordered_at, order_state);
+        Order order = new Order(payTotalPrice, pay_method, user_id, ordered_at, order_state, payment_id);
         OrderDAO dao = new OrderDAO();
         Order resultOrder = new Order();
         resultOrder = dao.insertOrder(order);

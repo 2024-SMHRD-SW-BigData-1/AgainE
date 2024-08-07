@@ -10,29 +10,36 @@ $(document).ready(function() {
             type: 'GET',
             data: { b_idx: b_idx },
             success: function(board) {
-               // console.log(board.b_idx)
-               
-               var boardHtml = `
-                            <div class="que">
-		                    <p>${board.b_category} > 문의 제목 : ${board.b_title}</p>
-		                    <div class="que_f">
-		                        <img src="../board/${board.b_file}" alt="이미지를 찾을 수 없습니다.">
-		                        <div class="que_w">
-		                            <p>문의 내용:
-		                            	
-		                                ${board.b_content}
-		                            	
-		                            </p>
-		                            
-		                            <div class="que_q">
-		                                <span>작성자:</span><span>${board.user_id}</span><br>
-		                                <span>작성일자:</span><span class="date">${board.created_at}</span>
-		                            </div>
-		                        </div>
-		                    </div>
-		                </div>
-                                    `;
-                	userBoardContainer.append(boardHtml);
+				
+			    // created_at을 변환하는 코드
+			    var createdAtDate = new Date(board.created_at);
+			    var formattedDate = createdAtDate.toLocaleDateString('ko-KR', {
+			        year: 'numeric',
+			        month: '2-digit',
+			        day: '2-digit',
+			        hour: '2-digit',
+			        minute: '2-digit',
+			        second: '2-digit'
+			    });
+			
+			    var boardHtml = `
+			        <div class="que">
+			            <p>${board.b_category} > 문의 제목 : ${board.b_title}</p>
+			            <div class="que_f">
+			                <img src="../board/${board.b_file}" alt="이미지를 찾을 수 없습니다.">
+			                <div class="que_w">
+			                    <p>문의 내용:
+			                        ${board.b_content}
+			                    </p>
+			                    <div class="que_q">
+			                        <span>작성자:</span><span>${board.user_id}</span><br>
+			                        <span>작성일자:</span><span class="date">${formattedDate}</span>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    `;
+			    userBoardContainer.append(boardHtml);
                 
             },
             error: function() {

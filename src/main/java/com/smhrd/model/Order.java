@@ -26,18 +26,20 @@ public class Order {
 
     // 주문 상태 
     private String order_state;
+    
+    // 결제id(결제api)
+    private String payment_id;
 
 	public Order(Integer total_amount,  String pay_method,
-			 String user_id, LocalDateTime ordered_at, String order_state) {
+			 String user_id, LocalDateTime ordered_at, String order_state, String payment_id) {
 
 		
 		this.total_amount = total_amount;
-		
 		this.pay_method = pay_method;
-		
 		this.user_id = user_id;
 		this.ordered_at = ordered_at;
 		this.order_state = order_state;
+		this.payment_id = payment_id;
 	}
 
 	public Order() {
@@ -91,6 +93,14 @@ public class Order {
 
 	public void setOrder_state(String order_state) {
 		this.order_state = order_state;
+	}
+
+	public String getPayment_id() {
+		return payment_id;
+	}
+
+	public void setPayment_id(String payment_id) {
+		this.payment_id = payment_id;
 	}
 
 	

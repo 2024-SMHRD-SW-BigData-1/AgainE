@@ -27,8 +27,14 @@ public class JoinService extends HttpServlet {
 		String user_email = request.getParameter("user_email");
 		String user_name = request.getParameter("user_name");
 		String user_phone = request.getParameter("user_phone");
-		String user_addr = request.getParameter("user_addr");
-		
+		// String user_addr = request.getParameter("user_addr");
+		String postcode = request.getParameter("postcode");
+		String address = request.getParameter("address");
+		String detailAddress = request.getParameter("detailAddress");
+		String extraAddress = request.getParameter("extraAddress"); 
+			String user_addr = "(" + postcode + ") " + address + " " + detailAddress + " " + extraAddress;
+			System.out.println(user_addr);
+		 
 		LocalDateTime joined_at = LocalDateTime.now();
 		joined_at = joined_at.truncatedTo(ChronoUnit.SECONDS);
         

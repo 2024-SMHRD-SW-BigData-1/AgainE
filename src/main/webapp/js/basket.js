@@ -90,6 +90,42 @@ $(document).ready(function() {
                 }
             });
 		});
+		
+		
+		
+		
+		//  장바구니 전체 삭제 버튼
+		$(document).on('click', '#deleteBasketAll', function() {
+			/*var basketIdxList = $('.cart-item').map(function() {
+		        return this.id;
+		    }).get();*/
+			
+			// console.log(basketIdxList); // id 목록을 확인할 수 있습니다.
+			
+			
+			$('#loading-spinner').show();  // 로딩 스피너 표시
+            $.ajax({
+                url: '../basket_delete_all',  // 서버의 장바구니 아이템 삭제 API 엔드포인트
+                method: 'POST',
+                traditional: true,
+                /*data: {
+                    basket_idx_list: basketIdxList
+                },*/
+                success: function(response) {
+					$('#loading-spinner').hide();  // 로딩 스피너 표시
+                    if (response.success) {
+		                initialBasket();  // 장바구니 다시 초기화
+		            } else {
+		                alert('장바구니 삭제 실패');
+		            }
+                },
+                error: function(error) {
+                    console.error('Error deleting basket item:', error);
+                    $('#loading-spinner').hide();  // 로딩 스피너 표시
+                }
+            });
+			
+		});
 
 
 

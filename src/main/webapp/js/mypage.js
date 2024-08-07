@@ -1,7 +1,8 @@
  $(document).ready(function() {
 	
 	var loginUserJson = $('#uploadForm').data('login-user-json');
-    //console.log(loginUserJson); // JSON 문자열 출력
+    // console.log(loginUserJson); // JSON 문자열 출력
+	// console.log(JSON.stringify(loginUserJson));
 
 	$('#upload-area').click(function() {
                 $('#file-input').click();
@@ -33,7 +34,10 @@
 		
         event.preventDefault(); // 폼 제출 기본 동작 방지
         var formData = new FormData($(this)[0]);
-        formData.append("loginUserJson", JSON.stringify(loginUserJson));
+        var loginUserJsonString = JSON.stringify(loginUserJson);  // JSON 문자열로 직렬화
+        formData.append("loginUserJson", loginUserJsonString);
+        // console.log(formData.get("loginUserJson"));
+        //formData.append("loginUserJson", loginUserJson);  // 이미 json형태여서 또 json직렬화 할 필요 없음?
         var fileInput = $('#file-input')[0];
         
         if (fileInput.files.length === 0) {
@@ -41,9 +45,12 @@
             return; // 파일이 선택되지 않은 경우에는 여기서 종료
         }
         
-			$('#loading-spinner').show(); // 로딩 스피너 표시
+		$('#loading-spinner').show(); // 로딩 스피너 표시
+		const url = "https://ff93-34-135-49-145.ngrok-free.app/flaskServer";
+			
         $.ajax({
             url: 'http://192.168.219.200:5058/flaskServer',
+            //url : url,
             type: 'POST',
             data: formData,
             processData: false,  // 데이터 처리를 jQuery가 하지 않도록 설정
